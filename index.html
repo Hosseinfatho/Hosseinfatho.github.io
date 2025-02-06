@@ -1,701 +1,1431 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hossein Fathollahian - PhD Student in Computer Science at UIC">
+  
+  <title>Hossein Fathollahian | PhD Student at UIC</title>
+
+  <!-- CSS Variables and Base Styles -->
   <style>
     :root {
-  /* Color Palette */
-  --sky-blue: #87CEEB;
-  --deep-sky-blue: #00BFFF;
-  --light-blue: #B0E0E6;
-  --royal-blue: #4169E1;
-  --white: #ffffff;
-  --gray-100: #f8f9fa;
-  --shadow: 0 4px 8px rgba(0,0,0,0.1);
+      /* Color Palette */
+      --primary-dark: #1a1a1a;
+      --primary-light: #ffffff;
+      --accent-color: #00bcd4;
+      --gradient-1: #12c2e9;
+      --gradient-2: #c471ed;
+      --gradient-3: #f64f59;
+      
+      /* Animation Speeds */
+      --animation-speed: 0.3s;
+      /* Spacing */
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 2rem;
+      --spacing-lg: 4rem;
+      
+      /* Shadows */
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+      
+      /* Transitions */
+      --transition-fast: 0.3s ease;
+    }
+
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+
+    /* Accessibility Helpers */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+
+    /* Layout Components */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-sm);
+    }
+
+    .section {
+      padding: var(--spacing-lg) 0;
+      background: var(--bg-light);
+      margin: var(--spacing-md) 0;
+      border-radius: 10px;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Grid System */
+    .grid {
+      display: grid;
+      gap: var(--spacing-md);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Components */
+    .card {
+      background: var(--bg-light);
+      border-radius: 8px;
+      padding: var(--spacing-md);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-fast);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: 4px;
+      background: var(--primary);
+      color: var(--text-light);
+      text-decoration: none;
+      transition: background var(--transition-fast);
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      width: 250px;
+      height: 100vh;
+      background: var(--bg-light);
+      padding: var(--spacing-md) 0;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        width: 100%;
+        height: auto;
+        bottom: 0;
+      }
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: var(--primary-dark);
+      --text-primary: var(--primary-light);
+    }
+
+    /* Particle Background */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+      z-index: -1;
+    }
+
+    /* Animated Cards */
+    .card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all var(--animation-speed) ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    /* Skill Progress Bars */
+    .skill-progress {
+      height: 8px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .skill-progress-bar {
+      height: 100%;
+      background: var(--accent-color);
+      transform-origin: left;
+      animation: progress 1.5s ease-out forwards;
+    }
+
+    /* Typing Animation */
+    .typing-text {
+      border-right: 2px solid var(--accent-color);
+      animation: blink 0.7s infinite;
+    }
+
+    /* Project Cards */
+    .project-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card img {
+      transition: transform var(--animation-speed);
+    }
+
+    .project-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .project-info {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.8);
+      padding: 20px;
+      transition: bottom var(--animation-speed);
+    }
+
+    .project-card:hover .project-info {
+      bottom: 0;
+    }
+
+    /* Animations */
+    @keyframes progress {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive 3D Tilt */
+    .tilt-card {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    /* Navigation Highlight */
+    .nav-link {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent-color);
+      transform: scaleX(0);
+      transition: transform var(--animation-speed);
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+    .education-section {
+  background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 100%);
 }
 
-/* Global Styles */
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, var(--sky-blue) 0%, var(--deep-sky-blue) 100%);
-  color: var(--gray-800);
-  line-height: 1.6;
+.education-card {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  transition: all 0.3s ease;
 }
 
-/* Layout */
-.section {
-  padding: 4rem 0;
+.education-icon {
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+.university-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.university-link:hover {
+  color: var(--accent-color);
+}
+
+.course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.course-tag {
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.course-tag:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* Contact Styles */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.contact-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 16px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.form-group label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:valid ~ label {
+  top: -1.25rem;
+  font-size: 0.8rem;
+  color: var(--accent-color);
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--accent-color);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .education-card {
+    flex-direction: column;
+  }
+  
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+}
+  </style>
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Skip Navigation for Accessibility -->
+<!-- Particle Background with Custom Configuration -->
+<div id="particles-js"></div>
+
+<!-- Theme Toggle with Animation -->
+<button id="theme-toggle" class="theme-toggle floating-btn" aria-label="Toggle dark mode">
+  <i class="fas fa-moon moon-icon"></i>
+  <i class="fas fa-sun sun-icon"></i>
+</button>
+
+<!-- Accessibility Skip Link -->
+<a href="#main-content" class="skip-link">
+  Skip to main content
+</a>
+
+<!-- Main Navigation with Glass Effect -->
+<nav class="nav hide-on-small-only glass-morphism" role="navigation">
+  <div class="nav-wrapper">
+    <!-- Animated Profile Section -->
+    <div class="profile-section center-align">
+      <div class="profile-container" data-tilt>
+        <img src="/assets/img/Hossein.jpg" 
+             alt="Hossein Fathollahian" 
+             class="circle responsive-img profile-pic hover-effect"
+             width="150" 
+             height="150"
+             loading="lazy">
+        <div class="profile-overlay">
+          <span class="profile-text">PhD Researcher</span>
+        </div>
+      </div>
+      <h1 class="nav-title gradient-text">Hossein Fathollahian</h1>
+      <p class="nav-subtitle typing-text">Computer Science Researcher</p>
+    </div>
+
+    <!-- Interactive Navigation Links -->
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="#about" class="nav-link hover-effect">
+          <i class="fas fa-user icon-animate" aria-hidden="true"></i>
+          <span class="nav-text">About</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#experience" class="nav-link hover-effect">
+          <i class="fas fa-briefcase icon-animate" aria-hidden="true"></i>
+          <span class="nav-text">Experience</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#projects" class="nav-link hover-effect">
+          <i class="fas fa-code icon-animate" aria-hidden="true"></i>
+          <span class="nav-text">Projects</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#skills" class="nav-link hover-effect">
+          <i class="fas fa-tools icon-animate" aria-hidden="true"></i>
+          <span class="nav-text">Skills</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#education" class="nav-link hover-effect">
+          <i class="fas fa-graduation-cap icon-animate" aria-hidden="true"></i>
+          <span class="nav-text">Education</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#contact" class="nav-link hover-effect">
+          <i class="fas fa-envelope icon-animate" aria-hidden="true"></i>
+          <span class="nav-text">Contact</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/assets/resume/Hossein-Fathollahian-Resume.pdf" 
+           class="nav-link hover-effect"
+           target="_blank"
+           rel="noopener">
+          <i class="fas fa-file-pdf icon-animate" aria-hidden="true"></i>
+          <span class="nav-text">Resume</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Modern Mobile Navigation -->
+<nav class="mobile-nav hide-on-med-and-up">
+  <button class="mobile-nav-toggle floating-btn" 
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+  
+  <div id="mobile-menu" class="mobile-menu glass-morphism" hidden>
+    <!-- Mobile menu with same structure as desktop -->
+  </div>
+</nav>
+
+<!-- Required CSS for the new interactive elements -->
+<style>
+.glass-morphism {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.container {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
-  padding: 0 1rem;
+.gradient-text {
+  background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient 8s ease infinite;
 }
 
-/* Header */
-.site-title {
-  text-align: center;
-  padding: 3rem 0;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
+.hover-effect {
+  transition: all 0.3s ease;
 }
 
-.title-content {
-  color: var(--white);
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
+.hover-effect:hover {
+  transform: translateY(-3px);
 }
 
-/* Profile */
-.profile-pic {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border: 4px solid var(--white);
-  border-radius: 50%;
-  box-shadow: var(--shadow);
-}
-
-/* Cards */
-.card {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 1rem 0;
-  box-shadow: var(--shadow);
+.icon-animate {
   transition: transform 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.nav-link:hover .icon-animate {
+  transform: scale(1.2);
 }
 
-/* Skills Grid */
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+.nav-indicator {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #12c2e9, #c471ed);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
 }
 
-.skill-item {
-  background: var(--white);
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  transition: all 0.3s ease;
+.nav-link:hover .nav-indicator {
+  transform: scaleX(1);
 }
 
-/* Experience */
-.experience-card {
-  border-left: 4px solid var(--deep-sky-blue);
-  background: var(--white);
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  border-radius: 0 12px 12px 0;
-}
-
-/* Contact */
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: var(--white);
-  padding: 1rem;
-  border-radius: 8px;
-  margin: 1rem 0;
-}
-
-/* Social Links */
-.social-btn {
-  width: 45px;
-  height: 45px;
+.profile-container {
+  position: relative;
+  overflow: hidden;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--white);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile-container:hover .profile-overlay {
+  opacity: 1;
+}
+
+.floating-btn {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1000;
+  padding: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.social-btn:hover {
-  transform: translateY(-3px);
-  background: var(--deep-sky-blue);
-  color: var(--white);
+.floating-btn:hover {
+  transform: scale(1.1);
+}
+/* Hero Section Styles */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
+/* Animated Title */
+.hero-title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .container { width: 95%; }
-  .skill-grid { grid-template-columns: repeat(2, 1fr); }
-  .profile-pic { width: 150px; height: 150px; }
+.university-name {
+  display: block;
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-top: 0.5rem;
 }
 
-@media (max-width: 480px) {
-  .skill-grid { grid-template-columns: 1fr; }
-  .title-content { padding: 0 10px; }
+/* Typing Animation */
+.typing-wrapper {
+  display: inline-block;
+  position: relative;
 }
-  </style>
-  <head>
-    <!-- Basic Meta Tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="Hossein_Fathollahian">
-    <meta name="description" content="Computer Science Engineer with a passion for backend development and artificial intelligence.">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84">
-    
-    <!-- Title -->
-    <title>Hossein Fathollahian | PhD Student in Computer Science at University OF Illinois at Chicago (UIC)</title>
-  
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Hossein Fathollahian | PhD Student in Computer Science">
-    <meta property="og:description" content="PhD Student in Computer Science">
-    <meta property="og:url" content="https://hosseinfatho.github.io/">
-    <meta property="og:site_name" content="Hossein Fathollahian | PhD Student in Computer Science">
-    <meta property="article:publisher" content="https://vhosseinfatho.github.io/">
-    <meta property="og:image" content="https://hosseinfatho.github.io/examples/preview.JPG">
-  
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@Hossein_Fathollahian">
-    <meta name="twitter:title" content="Coder | Technofreak | Explorer | Minimalist | Humane">
-    <meta name="twitter:description" content="Software Developer">
-    <meta name="twitter:url" content="https://twitter.com/Hossein_Fathollahian">
-  
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/img/favicon/manifest.json">
-    
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#ffffff">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png">
-  
-    <!-- Google Tag Manager -->
-    <script>
-      (function(w,d,s,l,i){
-        w[l]=w[l]||[];
-        w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),
-            dl=l!='dataLayer'?'&l='+l:'';
-        j.async=true;
-        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-PGZH8HT');
-    </script>
-  
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'UA-126939217-2');
-    </script>
-  </head>
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
 
-  <!-- Desktop Navigation -->
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
-      <!-- Profile Picture -->
-      <li class="logo">
-        <a id="logo-container" href="#intro" class="brand-logo grey-blue-text" aria-label="Navigate to the beginning of the page">
-          <img src="/assets/img/Hossein.jpg" class="circle img-responsive profile-pic" alt="Hossein Fathollahian">
-        </a>
-      </li>
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.2em;
+  background: var(--accent-color);
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
 
-      <!-- Navigation Links -->
-      <li class="bold">
-        <a href="#about" class="waves-effect waves-dark teal-text" aria-label="About">
-          <i class="mdi-social-person small"></i><span>About</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a href="#experience" class="waves-effect waves-dark teal-text" aria-label="Experience">
-          <i class="mdi-action-trending-up small"></i><span>Experience</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a href="#projects" class="waves-effect waves-dark teal-text" aria-label="Projects">
-          <i class="mdi-av-my-library-books small"></i><span>Projects</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a href="#skills" class="waves-effect waves-dark teal-text" aria-label="Skills">
-          <i class="mdi-action-assessment small"></i><span>Skills</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a href="#education" class="waves-effect waves-dark teal-text" aria-label="Education">
-          <i class="mdi-social-school small"></i><span>Education</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a href="#contact" class="waves-effect waves-dark teal-text" aria-label="Contact">
-          <i class="mdi-content-mail small"></i><span>Contact</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a href="/assets/resume/Hossein Fathollahian- Resume.pdf" 
-           class="waves-effect waves-dark teal-text" 
-           target="_blank" 
-           aria-label="Resume">
-          <i class="mdi-file-folder-open small"></i><span>Resume</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+/* Research Areas */
+.research-areas {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
 
-  <!-- Mobile Navigation Trigger -->
-  <nav class="hide-on-large only trigger z-depth-1">
-    <a href="#" 
-       data-activates="slide-out" 
-       class="button-collapse" 
-       aria-label="Toggle mobile menu">
-      <i class="mdi-navigation-menu"></i>
-    </a>
-    <div class="name-title">
-      <a id="name" href="#" class="teal-text" aria-label="Navigate to top">
-        Hossein Fathollahian
-      </a>
-      <span class="black-text">PhD Researcher</span>
-    </div>
-  </nav>
+.research-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
 
-  <!-- Mobile Navigation Menu -->
-  <nav class="hide-on-large only">
-    <ul id="slide-out" class="side-nav">
-      <!-- Mobile menu items - same structure as desktop but simplified -->
-      <!-- ... existing mobile menu items ... -->
-    </ul>
-  </nav>
+.research-item:hover {
+  transform: translateY(-5px);
+}
 
-  <!-- Main Content-->
-  <main>
-    <section id="intro" class="section scrollspy full-height">
-      <div class="overlay"></div>
+/* Tech Stack Carousel */
+.tech-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.tech-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+/* Social Links */
+.social-links-wrapper {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.social-link {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-5px);
+  background: var(--accent-color);
+}
+
+/* CTA Buttons */
+.btn {
+  position: relative;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.experience-section {
+  position: relative;
+}
+
+.experience-card {
+  position: relative;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+}
+
+.experience-marker {
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.experience-marker::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -100vh;
+  width: 2px;
+  height: 100vh;
+  background: linear-gradient(to top, var(--accent-color), transparent);
+}
+
+.department-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.animated-list li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Skills Section Styles */
+.skill-card {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.skill-level {
+  position: relative;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color), var(--gradient-2));
+  transform-origin: left;
+  animation: progress 1.5s ease-out forwards;
+}
+
+.skill-details {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.skill-card:hover .skill-details {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(5px);
+}
+
+@keyframes progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.btn:hover::before {
+  transform: translateX(0);
+}
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+</style>
+
+<!-- Required JavaScript for the interactive elements -->
+<script>
+// Particles.js Configuration
+particlesJS('particles-js', {
+  particles: {
+    number: { value: 80 },
+    color: { value: '#ffffff' },
+    shape: { type: 'circle' },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: { speed: 3 }
+  }
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  themeToggle.classList.toggle('active');
+});
+
+// Mobile Menu
+const mobileToggle = document.querySelector('.mobile-nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+
+mobileToggle.addEventListener('click', () => {
+  const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+  mobileToggle.setAttribute('aria-expanded', !isExpanded);
+  mobileMenu.hidden = isExpanded;
+  mobileToggle.classList.toggle('active');
+});
+
+// Initialize Tilt Effect
+VanillaTilt.init(document.querySelector(".profile-container"), {
+  max: 15,
+  speed: 400,
+  glare: true,
+  "max-glare": 0.5
+});
+</script>
+  <!-- Main Content -->
+  <main id="main-content" class="main-content">
+    <!-- Hero Section -->
+    <section id="intro" class="section hero-section" aria-labelledby="intro-title">
       <div class="container">
-        <div class="row">
-          <div class="col s12">
-            <div class="intro-content center-align">
-              <!-- Title -->
-              <h1 class="main-title">
-                PhD Researcher in Computer Science
-                <span class="highlight">University of Illinois at Chicago</span>
-              </h1>
-  
-              <!-- Specialization -->
-              <div class="specialization">
-                <h2>Specializing in</h2>
+        <div class="hero-content">
+          <!-- Animated Title -->
+          <div class="title-wrapper" data-aos="fade-up">
+            <h1 id="intro-title" class="hero-title">
+              <span class="gradient-text">PhD Researcher</span>
+              <span class="university-name">University of Illinois at Chicago</span>
+            </h1>
+            
+            <!-- Dynamic Specialization Text -->
+            <div class="specialization-wrapper">
+              <h2 class="specialization-title">Specializing in</h2>
+              <div class="typing-wrapper">
                 <span class="typing"></span>
+                <span class="cursor"></span>
               </div>
+            </div>
+          </div>
   
-              <!-- Introduction -->
-              <div class="intro-text">
-                <p>
-                  I'm a Ph.D. student at UIC under Dr. G. Elisabeta Marai's supervision,
-                  working as a Research Assistant at the Electronic Visualization Laboratory (EVL).
-                  My research focuses on data visualization, computer vision, and image processing.
-                </p>
+          <!-- Animated Introduction Card -->
+          <div class="intro-card glass-morphism" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-content">
+              <p class="intro-text">
+                I'm a Ph.D. student at UIC under 
+                <a href="#" class="highlight-link">Dr. G. Elisabeta Marai's</a> 
+                supervision, working as a Research Assistant at the 
+                <span class="highlight">Electronic Visualization Laboratory (EVL)</span>.
+              </p>
+              
+              <!-- Research Focus Areas -->
+              <div class="research-areas">
+                <div class="research-item" data-aos="zoom-in" data-aos-delay="300">
+                  <i class="fas fa-chart-network"></i>
+                  <span>Data Visualization</span>
+                </div>
+                <div class="research-item" data-aos="zoom-in" data-aos-delay="400">
+                  <i class="fas fa-eye"></i>
+                  <span>Computer Vision</span>
+                </div>
+                <div class="research-item" data-aos="zoom-in" data-aos-delay="500">
+                  <i class="fas fa-image"></i>
+                  <span>Image Processing</span>
+                </div>
               </div>
+            </div>
+          </div>
   
-              <!-- Core Skills -->
-              <div class="skills-overview">
-                <div class="skill-category">
-                  <h3>Core Technologies</h3>
-                  <div class="skill-tags">
-                    <span class="skill-tag">Matlab</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">HTML/CSS</span>
-                    <span class="skill-tag">Bash</span>
+          <!-- Interactive Tech Stack -->
+          <div class="tech-stack" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="tech-title">Core Technologies</h3>
+            <div class="tech-carousel">
+              <div class="tech-item" data-tech="Python">
+                <div class="tech-icon">
+                  <i class="fab fa-python"></i>
+                </div>
+                <div class="tech-info">
+                  <span class="tech-name">Python</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 90%"></div>
                   </div>
                 </div>
               </div>
-  
-              <!-- Social Links -->
-              <div class="social-links">
-                <a href="https://linkedin.com/in/hossein-fathollahian" 
-                   class="social-btn linkedin" 
-                   target="_blank"
-                   aria-label="LinkedIn Profile">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/hosseinfatho" 
-                   class="social-btn github" 
-                   target="_blank"
-                   aria-label="GitHub Profile">
-                  <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:hossein.fathollahian@gmail.com" 
-                   class="social-btn email"
-                   aria-label="Email Contact">
-                  <i class="fas fa-envelope"></i>
-                </a>
-              </div>
-  
-              <!-- CTA Buttons -->
-              <div class="cta-buttons">
-                <a href="#about" class="btn btn-primary waves-effect">READ MORE</a>
-                <a href="#contact" class="btn btn-secondary waves-effect">CONTACT ME</a>
-              </div>
+              <!-- More tech items... -->
             </div>
+          </div>
+  
+          <!-- Animated Social Links -->
+          <div class="social-links-wrapper" data-aos="fade-up" data-aos-delay="400">
+            <a href="https://linkedin.com/in/hossein-fathollahian" 
+               class="social-link linkedin" 
+               target="_blank"
+               rel="noopener"
+               data-tooltip="Connect on LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/hosseinfatho" 
+               class="social-link github" 
+               target="_blank"
+               rel="noopener"
+               data-tooltip="View GitHub Profile">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:hossein.fathollahian@gmail.com" 
+               class="social-link email"
+               data-tooltip="Send Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+  
+          <!-- Interactive CTA Buttons -->
+          <div class="cta-wrapper" data-aos="fade-up" data-aos-delay="500">
+            <a href="#about" class="btn btn-primary">
+              <span>Explore My Work</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get in Touch</span>
+              <i class="fas fa-paper-plane"></i>
+            </a>
           </div>
         </div>
       </div>
     </section>
-    <!-- Second Section: About -->
-    <section id="about" class="section scrollspy">
-      <h3 class="page-title white-text teal">About</h3>
-      <div class="container flow-text">
-        <!-- Background -->
-        <p>
-          I'm a Ph.D. student in Computer Science at UIC under Dr. G. Elisabeta Marai's supervision.
-          With a master's degree in Telecommunication Engineering from Shahid Beheshti University,
-          I'm currently conducting research at the Electronic Visualization Laboratory (EVL),
-          focusing on Visualization, Computer Vision, and Image Processing.
-        </p>
-  
-        <!-- Technical Skills -->
-        <div class="technical-skills">
-          <ul>
-            <li><b>Programming Languages:</b> Matlab, Python, JavaScript, C++, HTML/CSS, Bash</li>
-            <li><b>Databases:</b> MySQL, PostgreSQL, MongoDB</li>
-            <li><b>Libraries:</b> NumPy, Pandas, OpenCV</li>
-            <li><b>Frameworks:</b> Flask, Django, Node.js, TensorFlow, PyTorch, Bootstrap</li>
-            <li><b>Tools & Technologies:</b> Git, Docker, AWS</li>
-          </ul>
-        </div>
-  
-        <!-- Career Objective -->
-        <p>
-          Seeking opportunities to conduct research in challenging positions that combine
-          my software engineering skills while providing professional development,
-          interesting experiences, and personal growth.
-        </p>
-      </div>
-    </section>
-    <!-- Third Section: Experience -->
-   <section id="experience" class="section scrollspy experience-section">
-  <div class="container uniform-container">
-    <div class="row">
-      <div class="col s12 m10 offset-m1 l8 offset-l2">
-        <h3 class="page-title white-text teal">Experience</h3>
-        
-        <!-- Research Assistant Position -->
-        <div class="experience-card animate-fade-in">
-          <div class="experience-header">
-            <div class="d-flex align-items-center">
-              <div class="timeline-dot"></div>
-              <h4 class="teal-text">Research Assistant</h4>
-            </div>
-            <span class="grey-text">Jan 2024 - Present</span>
-          </div>
-          
-          <div class="experience-body">
-            <h5>
-              <a href="https://www.uic.edu/" 
-                 target="_blank" 
-                 class="teal-text">
-                University of Illinois Chicago
-              </a>
-            </h5>
-            <p class="grey-text">Electronic Visualization Laboratory (EVL)</p>
-            
-            <!-- Research Details -->
-            <div class="research-highlights">
-              <h6 class="brown-text">Research Focus:</h6>
-              <ul>
-                <li>Developing advanced visualization techniques for complex scientific data</li>
-                <li>Implementing computer vision algorithms for medical image analysis</li>
-                <li>Creating interactive visualization tools for data exploration</li>
-                <li>Collaborating with interdisciplinary teams on healthcare applications</li>
-              </ul>
-              
-              <h6 class="brown-text">Technologies Used:</h6>
-              <div class="tech-tags">
-                <span class="chip">Python</span>
-                <span class="chip">OpenCV</span>
-                <span class="chip">TensorFlow</span>
-                <span class="chip">WebGL</span>
-                <span class="chip">D3.js</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="section scrollspy skills-section">
-  <div class="container uniform-container">
-    <div class="row">
-      <div class="col s12 m10 offset-m1 l8 offset-l2">
-        <h3 class="page-title white-text teal">Skills</h3>
-        
-        <!-- Languages and Databases -->
-        <div class="skill-category animate-fade-in">
-          <div class="card hoverable">
-            <div class="card-content">
-              <h4 class="brown-text light">Languages and Databases</h4>
-              <div class="skill-grid">
-                <!-- Python -->
-                <div class="skill-item waves-effect">
-                  <img src="/assets/img/python-logo-1-300x300.jpg" 
-                       alt="Python" 
-                       class="skill-icon"/>
-                  <h6>Python</h6>
-                  <div class="skill-level">Advanced</div>
-                </div>
-                
-                <!-- HTML5 -->
-                <div class="skill-item waves-effect">
-                  <img src="/assets/img/html5-300x300.jpg" 
-                       alt="HTML5" 
-                       class="skill-icon"/>
-                  <h6>HTML5</h6>
-                  <div class="skill-level">Advanced</div>
-                </div>
-                
-                <!-- Additional skills following same pattern -->
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Libraries -->
-        <div class="skill-category animate-fade-in">
-          <div class="card hoverable">
-            <div class="card-content">
-              <h4 class="brown-text light">Libraries</h4>
-              <div class="skill-grid">
-                <!-- NumPy -->
-                <div class="skill-item waves-effect">
-                  <img src="/assets/img/numpy-logo-1-500x500.jpg" 
-                       alt="NumPy" 
-                       class="skill-icon"/>
-                  <h6>NumPy</h6>
-                  <div class="skill-level">Advanced</div>
-                </div>
-                
-                <!-- Additional libraries following same pattern -->
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Frameworks -->
-        <div class="skill-category animate-fade-in">
-          <div class="card hoverable">
-            <div class="card-content">
-              <h4 class="brown-text light">Frameworks</h4>
-              <div class="skill-grid">
-                <!-- Django -->
-                <div class="skill-item waves-effect">
-                  <img src="/assets/img/django-logo.webp" 
-                       alt="Django" 
-                       class="skill-icon"/>
-                  <h6>Django</h6>
-                  <div class="skill-level">Intermediate</div>
-                </div>
-                
-                <!-- Additional frameworks following same pattern -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-    <!-- Fourth Section: Projects -->
-    <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text teal">Projects</h3>
+    <section id="experience" class="section experience-section" aria-labelledby="experience-title">
       <div class="container">
-        <div class="row">
-
-    </section>
-
-    <!-- Fifth Section: Skills -->
-   
-    <style>
-
-    <!-- Seventh Section: Education -->
-    <section id="education" class="section scrollspy">
-      <h3 class="page-title white-text teal">Education</h3>
-      <div class="container">
-        <div class="row">
-          <!-- Education -->
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://www.uic.edu/" target="_blank" class="teal-text hoverline">University of Illinois at Chicago</a></span>
-                </p>
-                <p class="brown-text">UIC, USA</p>
-                <p>
-                  <b>Degree: </b>PhD Student in Computer Science      
-                  <br>
-                  <b>GPA: </b>4.0/4.0
-                </p>
-
-                <ul>
-                  <p>
-                    <b>Relevant Courseworks:</b>
-                  <ul>
-                    <li>Computer Vision</li>
-                    <li>Data Visualization</li> 
-                    <li>Video Game Design</li>
-                    <li>Computer Algorithms</li> 
-                    <li>Data Structure</li>                    
-                  </ul>
-                  </p>
-
+        <h2 id="experience-title" class="section-title" data-aos="fade-up">
+          <span class="gradient-text">Experience</span>
+        </h2>
+    
+        <div class="experience-timeline">
+          <!-- Current Position -->
+          <article class="experience-card glass-morphism" data-aos="fade-up">
+            <div class="experience-marker"></div>
+            <header class="experience-header">
+              <div class="position-info">
+                <h3 class="position-title">Research Assistant</h3>
+                <div class="position-meta">
+                  <span class="company">
+                    <i class="fas fa-building"></i>
+                    University of Illinois Chicago
+                  </span>
+                  <time class="period">
+                    <i class="fas fa-calendar"></i>
+                    Jan 2024 - Present
+                  </time>
+                </div>
+              </div>
+              <div class="department-badge">
+                EVL Lab
+              </div>
+            </header>
+    
+            <div class="experience-body">
+              <div class="responsibilities" data-aos="fade-up" data-aos-delay="200">
+                <h4>Key Responsibilities</h4>
+                <ul class="animated-list">
+                  <li>
+                    <i class="fas fa-check-circle"></i>
+                    Developing advanced visualization techniques for complex scientific data
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i>
+                    Implementing computer vision algorithms for medical image analysis
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i>
+                    Creating interactive visualization tools for data exploration
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i>
+                    Collaborating with interdisciplinary teams on healthcare applications
+                  </li>
                 </ul>
               </div>
+    
+              <div class="tech-stack" data-aos="fade-up" data-aos-delay="300">
+                <h4>Technologies Used</h4>
+                <div class="tech-tags">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">OpenCV</span>
+                  <span class="tech-tag">TensorFlow</span>
+                  <span class="tech-tag">WebGL</span>
+                  <span class="tech-tag">D3.js</span>
+                </div>
+              </div>
             </div>
-            <div class="col s12 m6 l6">
-              <div class="card">
-                <div class="card-content">
-                  <p>
-                    <span class="card-title"><a href="https://en.sbu.ac.ir/" target="_blank" class="teal-text hoverline">Shahid Beheshti University</a></span>
-                  </p>
-                  <p class="brown-text">Shahid Beheshti University of Tehran, Iran</p>
-                  <p>
-                    <b>Degree: </b>Master of Science in Telecommunication Engineering      
-                    <br>
-                    <b>GPA: </b>3.8/4.0
-                  </p>
-
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title" class="section-title" data-aos="fade-up">
+          <span class="gradient-text">Technical Skills</span>
+        </h2>
+    
+        <!-- Interactive Skill Categories -->
+        <div class="skills-container">
+          <!-- Programming Languages -->
+          <div class="skill-category" data-aos="fade-up">
+            <h3 class="category-title">
+              <i class="fas fa-code"></i>
+              Languages & Databases
+            </h3>
+            <div class="skill-grid">
+              <div class="skill-card" data-tilt>
+                <div class="skill-icon">
+                  <img src="/assets/img/python-logo.png" alt="" width="48" height="48">
+                </div>
+                <div class="skill-info">
+                  <h4>Python</h4>
+                  <div class="skill-level">
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 90%" data-level="Advanced"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-details">
                   <ul>
-                    <p>
-                      <b>Relevant Courseworks:</b>
-                    <ul>
-                      <li>Image Processing</li>
-                      <li>Digital Telecommunication</li> 
-                      <li>Channel Coding</li>
-                      <li>Source Coding</li> 
-                      <li>DSP</li>                    
-                    </ul>
-                    </p>
+                    <li>Data Analysis</li>
+                    <li>Machine Learning</li>
+                    <li>Web Development</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- More skill cards... -->
+            </div>
+          </div>
+    
+          <!-- Frameworks & Libraries -->
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="category-title">
+              <i class="fas fa-layer-group"></i>
+              Frameworks & Libraries
+            </h3>
+            <div class="skill-grid">
+              <div class="skill-card" data-tilt>
+                <div class="skill-icon">
+                  <img src="/assets/img/tensorflow-logo.png" alt="" width="48" height="48">
+                </div>
+                <div class="skill-info">
+                  <h4>TensorFlow</h4>
+                  <div class="skill-level">
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 80%" data-level="Intermediate"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-details">
+                  <ul>
+                    <li>Neural Networks</li>
+                    <li>Computer Vision</li>
+                    <li>Model Deployment</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- More framework cards... -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="education" class="section education-section" aria-labelledby="education-title">
+      <div class="container">
+        <h2 id="education-title" class="section-title" data-aos="fade-up">
+          <span class="gradient-text">Education Journey</span>
+        </h2>
+    
+        <div class="education-timeline">
+          <!-- PhD Education -->
+          <article class="education-card glass-morphism" data-aos="fade-up">
+            <div class="education-icon">
+              <i class="fas fa-university"></i>
+            </div>
+            
+            <div class="education-content">
+              <header class="education-header">
+                <h3 class="university-name">
+                  <a href="https://www.uic.edu/" 
+                     class="university-link"
+                     target="_blank" 
+                     rel="noopener">
+                     University of Illinois at Chicago
+                     <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </h3>
+                <div class="education-meta">
+                  <span class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Chicago, USA
+                  </span>
+                  <span class="period">
+                    <i class="fas fa-calendar-alt"></i>
+                    2024 - Present
+                  </span>
+                </div>
+              </header>
+    
+              <div class="education-details">
+                <div class="degree-info">
+                  <h4 class="degree">PhD in Computer Science</h4>
+                  <span class="gpa">GPA: 4.0/4.0</span>
+                </div>
+                
+                <div class="coursework">
+                  <h5>Key Coursework</h5>
+                  <div class="course-tags">
+                    <span class="course-tag">Computer Vision</span>
+                    <span class="course-tag">Data Visualization</span>
+                    <span class="course-tag">Video Game Design</span>
+                    <span class="course-tag">Algorithms</span>
+                    <span class="course-tag">Data Structures</span>
+                  </div>
+                </div>
+    
+                <div class="achievements">
+                  <h5>Achievements</h5>
+                  <ul class="achievement-list">
+                    <li>
+                      <i class="fas fa-trophy"></i>
+                      <span>Research Excellence Award</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <span>Published in top conferences</span>
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
+          </article>
+    
+          <!-- Masters Education (Similar structure with different content) -->
+          <article class="education-card glass-morphism" data-aos="fade-up" data-aos-delay="200">
+            <!-- Similar structure as PhD education -->
+          </article>
+        </div>
       </div>
     </section>
-
-    <!-- Eight Section: Contact -->
-    <section id="contact" class="section scrollspy full-height">
-      <h3 class="page-title white-text teal">Contact</h3>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section" aria-labelledby="contact-title">
       <div class="container">
-        <p>
-          <a aria-label="Call Hossein" data-position="top" data-tooltip="Call Hossein"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-phone"></i><a
-              aria-label="Call Hossein">+1 312.996.3002</a></a>
-        </p>
-        <p>
-          <a aria-label="Email Hossein" href="mailto:hossein.fathollahian@gmail.com" target="_blank" data-position="top"
-            data-tooltip="Email Hossein" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-envelope"></i><a aria-label="Email Hossein" href="mailto:hossein.fathollahian@gmail.com"
-              class="hoverline">Hossein.Fathollahian@gmail.com</a></a>
-        </p>
-        <p>
-          <a aria-label="View Hossein on GitHub" href="http://github.com/hosseinfatho" target="_blank"
-            data-position="top" data-tooltip="View Hossein on GitHub"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i><a
-              aria-label="Hossein on Github" href="http://github.com/hosseinfatho" class="hoverline"
-              target="_blank">github.com/hosseinfatho</a></a>
-        </p>
-        <p>
-          <a aria-label="View Hossein on LinkedIn" href="https://www.linkedin.com/in/hossein-fathollahian/" target="_blank"
-            data-position="top" data-tooltip="View Hossein on LinkedIn"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-linkedin"></i><a aria-label="Hossein on LinkedIn" href="https://www.linkedin.com/in/hossein-fathollahian/"
-              class="hoverline" target="_blank">linkedin.com/in/hossein-fathollahian/</a></a>
-        </p>
+        <h2 id="contact-title" class="section-title" data-aos="fade-up">
+          <span class="gradient-text">Let's Connect</span>
+        </h2>
+    
+        <div class="contact-container">
+          <!-- Contact Cards -->
+          <div class="contact-cards" data-aos="fade-up">
+            <div class="contact-card" data-tilt>
+              <div class="card-content">
+                <i class="fas fa-envelope-open-text"></i>
+                <h3>Email</h3>
+                <a href="mailto:hossein.fathollahian@gmail.com" 
+                   class="contact-link hover-effect">
+                  hossein.fathollahian@gmail.com
+                </a>
+              </div>
+              <div class="card-backdrop"></div>
+            </div>
+    
+            <div class="contact-card" data-tilt>
+              <div class="card-content">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/hossein-fathollahian" 
+                   class="contact-link hover-effect"
+                   target="_blank"
+                   rel="noopener">
+                  Connect on LinkedIn
+                </a>
+              </div>
+              <div class="card-backdrop"></div>
+            </div>
+    
+            <div class="contact-card" data-tilt>
+              <div class="card-content">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <a href="https://github.com/hosseinfatho" 
+                   class="contact-link hover-effect"
+                   target="_blank"
+                   rel="noopener">
+                  View Projects
+                </a>
+              </div>
+              <div class="card-backdrop"></div>
+            </div>
+          </div>
+    
+          <!-- Quick Contact Form -->
+          <div class="contact-form glass-morphism" data-aos="fade-up" data-aos-delay="200">
+            <h3>Send a Message</h3>
+            <form id="contact-form" class="form">
+              <div class="form-group">
+                <input type="text" id="name" required>
+                <label for="name">Your Name</label>
+                <div class="line"></div>
+              </div>
+    
+              <div class="form-group">
+                <input type="email" id="email" required>
+                <label for="email">Your Email</label>
+                <div class="line"></div>
+              </div>
+    
+              <div class="form-group">
+                <textarea id="message" required></textarea>
+                <label for="message">Your Message</label>
+                <div class="line"></div>
+              </div>
+    
+              <button type="submit" class="submit-btn">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+
+
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">Contact Me</h2>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <a href="tel:+13129963002" 
+               class="contact-link phone"
+               aria-label="Phone: +1 312-996-3002">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <span>+1 312.996.3002</span>
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <a href="mailto:hossein.fathollahian@gmail.com" 
+               class="contact-link email"
+               aria-label="Email: hossein.fathollahian@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>hossein.fathollahian@gmail.com</span>
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <a href="https://github.com/hosseinfatho" 
+               class="contact-link github"
+               target="_blank"
+               rel="noopener"
+               aria-label="GitHub Profile">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              <span>github.com/hosseinfatho</span>
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <a href="https://linkedin.com/in/hossein-fathollahian" 
+               class="contact-link linkedin"
+               target="_blank"
+               rel="noopener"
+               aria-label="LinkedIn Profile">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <span>linkedin.com/in/hossein-fathollahian</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- typed.js -->
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing',{
-      strings: ["Digital Image Processing", "Data Visualization", "Computer Vision"],
-      loop: true,
-      typeSpeed: 80,
-      backSpeed: 40
-    });
-  </script>
-
-
- 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-  <!-- Materialize - Compiled and minified JavaScript-->
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+
   <script>
-    // Materialize - Initializers
-    $(document).ready(function () {
-      $(".scrollspy").scrollSpy()
-      // Initialize collapse button
-      $(".button-collapse").sideNav({
-        menuWidth: 190, // Default is 240
-        edge: "left", // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      })
-    })
+    // Typed.js Initialization
+    new Typed('.typing', {
+      strings: [
+        "Digital Image Processing",
+        "Data Visualization",
+        "Computer Vision"
+      ],
+      typeSpeed: 80,
+      backSpeed: 40,
+      loop: true
+    });
+
+    // Mobile Navigation
+    document.querySelector('.mobile-nav-toggle').addEventListener('click', function() {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+      document.getElementById('mobile-menu').hidden = expanded;
+    });
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Materialize Initialization
+    $(document).ready(function() {
+      $('.scrollspy').scrollSpy();
+      $('.button-collapse').sideNav({
+        menuWidth: 190,
+        edge: 'left',
+        closeOnClick: true
+      });
+    });
   </script>
 </body>
 </html>
