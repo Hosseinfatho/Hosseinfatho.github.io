@@ -338,6 +338,242 @@
     height: 50px;
   }
 }
+.intro-content {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.main-title .highlight {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin-top: 0.5rem;
+}
+
+.specialization {
+  margin: 2rem 0;
+}
+
+.typing {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 2rem auto;
+  line-height: 1.8;
+  font-size: 1.2rem;
+}
+
+.skills-overview {
+  margin: 3rem 0;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.skill-tag {
+  padding: 0.5rem 1rem;
+  background: var(--light-bg);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.social-links {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-bg);
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  background: var(--accent-color);
+  color: white;
+}
+
+.cta-buttons {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .intro-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+.uniform-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding: 6rem 0;
+  width: 100%;
+}
+
+.intro-content {
+  padding: 4rem 0;
+  position: relative;
+  width: 100%;
+}
+
+/* Center content in all sections */
+.center-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Consistent card sizing */
+.card {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .uniform-container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .uniform-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+  
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+/* Add these classes to your existing sections */
+.about-section,
+.experience-section,
+.skills-section,
+.education-section,
+.contact-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Maintain consistent grid columns */
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Consistent margins for all headings */
+.section h2,
+.section h3,
+.section h4 {
+  margin-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+}
+.site-title {
+      text-align: center;
+      padding: 2rem 0;
+      background: linear-gradient(135deg, #004d40 0%, #00897b 100%);
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .title-content {
+      font-family: 'Playfair Display', serif;
+      color: white;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .position {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .university {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: #4db6ac;
+    }
+
+    .title-decoration {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(0,77,64,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .name {
+        font-size: 2rem;
+      }
+      
+      .position {
+        font-size: 1rem;
+      }
+    }
   </style>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width initial-scale=1" />
@@ -353,6 +589,10 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
   <title>Hossein Fathollahian | PhD Student in Computer Science at University OF Illinois at Chicago (UIC)</title>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
@@ -510,43 +750,66 @@
 
   <!-- Main Content-->
   <main>
-    <section id="intro" class="section scrollspy intro-section">
+    <section id="intro" class="section scrollspy full-height">
+      <div class="overlay"></div>
       <div class="container">
         <div class="row">
-          <div class="col s12 m8 offset-m2">
-            <div class="caption center-align">
-              <h2>Hossein Fathollahian</h2>
-              <h4 class="light white-text">PhD Researcher in Computer Science</h4>
-              <h5 class="light white-text">Specializing in <span class="typing"></span></h5>
-              
-              <div class="social">
-                <a href="https://www.linkedin.com/in/hossein-fathollahian/" target="_blank">
-                  <button class="icon-btn linkedin">
-                    <i class="fa fa-linkedin"></i>
-                  </button>
+          <div class="col s12">
+            <div class="intro-content center-align">
+              <!-- Title Section -->
+              <h1 class="main-title">
+                PhD Researcher in Computer Science
+                <span class="highlight">University of Illinois at Chicago</span>
+              </h1>
+    
+              <!-- Specialization -->
+              <div class="specialization">
+                <h2>Specializing in</h2>
+                <span class="typing"></span>
+              </div>
+    
+              <!-- Brief Introduction -->
+              <div class="intro-text">
+                <p>
+                  I'm a Ph.D. student in Computer Science at UIC under the supervision of 
+                  Dr. G. Elisabeta (Liz) Marai. Currently working as a Research Assistant 
+                  at the Electronic Visualization Laboratory (EVL), focusing on data visualization, 
+                  computer vision, and image processing.
+                </p>
+              </div>
+    
+              <!-- Technical Skills Overview -->
+              <div class="skills-overview">
+                <div class="skill-category">
+                  <h3>Core Technologies</h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Matlab</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Bash</span>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Social Links -->
+              <div class="social-links">
+                <a href="https://linkedin.com/in/your-profile" class="social-btn linkedin">
+                  <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/hosseinfatho/" target="_blank">
-                  <button class="icon-btn github">
-                    <i class="fa fa-github"></i>
-                  </button>
+                <a href="https://github.com/your-profile" class="social-btn github">
+                  <i class="fab fa-github"></i>
                 </a>
-                <a href="mailto:hossein.fathollahian@gmail.com" target="_blank">
-                  <button class="icon-btn email">
-                    <i class="fa fa-envelope"></i>
-                  </button>
+                <a href="mailto:your.email@example.com" class="social-btn email">
+                  <i class="fas fa-envelope"></i>
                 </a>
               </div>
     
-              <p class="light white-text">
-                As a PhD student at UIC's Electronic Visualization Laboratory (EVL), 
-                I focus on advancing the fields of computer vision and data visualization. 
-                My research aims to transform complex data into actionable insights through 
-                innovative visualization techniques and advanced image processing algorithms.
-              </p>
-    
-              <div class="buttons">
-                <a href="#about" class="btn waves-effect waves-light">Read More</a>
-                <a href="#contact" class="btn waves-effect waves-light">Contact Me</a>
+              <!-- Call to Action Buttons -->
+              <div class="cta-buttons">
+                <a href="#about" class="btn btn-primary waves-effect">READ MORE</a>
+                <a href="#contact" class="btn btn-secondary waves-effect">CONTACT ME</a>
               </div>
             </div>
           </div>
@@ -584,8 +847,11 @@
     </section>
 
     <!-- Third Section: Experience -->
-    <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text teal">Research Experience</h3>
+    <section id="experience" class="section scrollspy experience-section">
+      <div class="container uniform-container">
+        <div class="row">
+          <div class="col s12 m10 offset-m1 l8 offset-l2">
+            <h3 class="page-title white-text teal">Experience</h3>
       <div class="container">
         <div class="experience-card animate-fade-in">
           <div class="experience-header">
@@ -621,28 +887,6 @@
         <!-- Additional experience cards... -->
       </div>
 
-    <div class="card">
-      <div class="card-content">
-        <div class="row">
-          <div class="col s12 m10">
-            <p><span class="card-title">Backend Project</span></p>
-          </div>
-        </div>
-        <div class="role brown-text text-darken-2">Software Engineer</div>
-        <ul>
-          <li>Developed and managed the backend of an e-commerce platform using Flask, MongoDB, and AWS.</li>
-          <li>Worked on three web applications targeting customers, selling vendors, and admin users; built 50+ RESTful APIs with functionalities such as login/sign up, view a product, add a product to cart, checkout the order, etc.</li>
-          <li>Improved the response time by 20% by refactoring the codebase and changing database design and queries.</li>
-          <li>Added a bulk upload feature which reduced the manual work of adding products into a database.</li>
-          <li><b>Tools:</b> Python, Flask, MongoDB</li>
-        </ul>
-      </div>
-      <div class="card-action">
-        <span>Sep 2022 - Dec 2023 | Tehran, Iran</span>
-      </div>
-    </div>
-
-  </div>
 </section>
 
     <!-- Fourth Section: Projects -->
@@ -654,9 +898,11 @@
     </section>
 
     <!-- Fifth Section: Skills -->
-    <section id="skills" class="section scrollspy">
-      <h3 class="page-title white-text teal">Technical Skills</h3>
-      <div class="container">
+    <section id="skills" class="section scrollspy skills-section">
+      <div class="container uniform-container">
+        <div class="row">
+          <div class="col s12 m10 offset-m1 l8 offset-l2">
+            <h3 class="page-title white-text teal">Skills</h3>
         
         <!-- Languages and Databases -->
         <div class="skill-category animate-fade-in">
@@ -915,7 +1161,7 @@
   </script>
 
 
-  <!-- jQuery-->
+ 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Materialize - Compiled and minified JavaScript-->
