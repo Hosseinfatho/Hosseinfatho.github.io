@@ -69,311 +69,6 @@
   <meta name="robots" content="index, follow" />
   <!-- Google Site Verification for indexing -->
   <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
-
-  <style>
-  /* Update background styles */
-  :root {
-    --gradient-1: #2193b0;
-    --gradient-2: #6dd5ed;
-    --gradient-3: #4b6cb7;
-    --text-light: #ffffff;
-    --text-dark: #2c3e50;
-  }
-
-  body {
-    background: linear-gradient(-45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    min-height: 100vh;
-  }
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  /* Update card styles */
-  .card {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-  }
-
-  /* Update navigation styles */
-  .side-nav {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-  }
-
-  /* Update section styles */
-  section {
-    margin: 30px 0;
-    padding: 20px;
-  }
-
-  /* Update text colors for better contrast */
-  .white-text {
-    color: var(--text-light) !important;
-  }
-
-  .teal {
-    color: var(--gradient-1) !important;
-  }
-
-  /* Remove old cloud styles */
-  .cloud {
-    display: none;
-  }
-
-  /* Update these styles */
-  :root {
-    --primary-color: #2c3e50;
-    --accent-color: #3498db;
-    --gradient: linear-gradient(135deg, #3498db, #2ecc71);
-    --sky-gradient: linear-gradient(to bottom, #1e88e5, #64b5f6, #90caf9);
-  }
-
-  /* Add animated clouds */
-  .cloud {
-    position: fixed;
-    width: 100px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    animation: float 15s linear infinite;
-    z-index: -1;
-  }
-
-  .cloud::before,
-  .cloud::after {
-    content: '';
-    position: absolute;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-  }
-
-  .cloud::before {
-    width: 50px;
-    height: 50px;
-    top: -20px;
-    left: 15px;
-  }
-
-  .cloud::after {
-    width: 30px;
-    height: 30px;
-    top: -10px;
-    left: 45px;
-  }
-
-  .cloud:nth-child(1) {
-    top: 10%;
-    left: -100px;
-    transform: scale(1.2);
-    opacity: 0.7;
-    animation-delay: 0s;
-  }
-
-  .cloud:nth-child(2) {
-    top: 30%;
-    left: -100px;
-    transform: scale(0.8);
-    opacity: 0.5;
-    animation-delay: 5s;
-  }
-
-  .cloud:nth-child(3) {
-    top: 50%;
-    left: -100px;
-    transform: scale(1);
-    opacity: 0.6;
-    animation-delay: 10s;
-  }
-
-  @keyframes float {
-    from {
-      left: -100px;
-    }
-    to {
-      left: calc(100% + 100px);
-    }
-  }
-
-  /* Update section styles */
-  section {
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Update navigation styles */
-  .side-nav .logo img {
-    border: 3px solid var(--accent-color);
-    transition: transform 0.3s ease;
-  }
-
-  .side-nav .logo img:hover {
-    transform: scale(1.1);
-  }
-
-  /* Animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Contact Section */
-  #contact .btn-floating {
-    background: var(--gradient);
-    transition: transform 0.3s ease;
-  }
-
-  #contact .btn-floating:hover {
-    transform: translateY(-3px);
-  }
-
-  /* Education Cards */
-  .education-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-  }
-
-  .education-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--gradient);
-  }
-
-  /* Experience Timeline */
-  .experience-card {
-    position: relative;
-    padding-left: 2rem;
-  }
-
-  .experience-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: var(--gradient);
-  }
-
-  /* Responsive Improvements */
-  @media (max-width: 992px) {
-    .caption h2 {
-      font-size: 2.5rem;
-    }
-    
-    .side-nav {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  /* Modern Intro Section */
-  #intro {
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    position: relative;
-    overflow: hidden;
-  }
-
-  @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  .intro-content {
-    position: relative;
-    z-index: 2;
-    padding: 4rem 0;
-  }
-
-  .intro-title {
-    font-size: 4rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  }
-
-  .intro-name {
-    color: #64ffda;
-    position: relative;
-    display: inline-block;
-  }
-
-  .intro-name::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background: #64ffda;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.5s ease;
-  }
-
-  .intro-name:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-
-  .typing-wrapper {
-    font-size: 2rem;
-    color: #fff;
-    margin: 1.5rem 0;
-  }
-
-  .typing {
-    color: #64ffda;
-    font-weight: 500;
-  }
-
-  .intro-description {
-    color: rgba(255,255,255,0.9);
-    font-size: 1.2rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 2rem auto;
-  }
-
-  .highlight {
-    color: #64ffda;
-    font-weight: 500;
-  }
-  </style>
 </head>
 
 <body>
@@ -381,11 +76,6 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT"
   height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
-
-  <!-- Add after opening body tag -->
-  <div class="cloud"></div>
-  <div class="cloud"></div>
-  <div class="cloud"></div>
 
   <!-- Navigation Menu-->
   <!-- Nav class 1 -->
@@ -515,42 +205,45 @@
     <section id="intro" class="section scrollspy full-height">
       <div class="overlay"></div>
       <div class="container">
-        <div class="intro-content">
-          <h1 class="intro-title">
-            Hi, I'm <span class="intro-name">Hossein Fathollahian</span>
-          </h1>
-          
-          <div class="typing-wrapper">
-            I'm a <span class="typing"></span>
-          </div>
-          
-          <p class="intro-description">
-            A self-driven, quick starter, and passionate researcher dedicated to solving complex and challenging real-world problems.
-          </p>
-          
-          <p class="intro-description">
-            As a PhD student at <span class="highlight">University of Illinois Chicago (UIC)</span>, 
-            I specialize in <span class="highlight">data visualization</span>, 
-            <span class="highlight">image processing</span>, and 
-            <span class="highlight">computer vision</span>, with a particular focus on medical imaging applications.
-          </p>
-          
-          <p class="intro-description">
-            My research aims to revolutionize medical image interpretation through innovative visualization techniques 
-            and advanced processing algorithms, ultimately enhancing diagnostic accuracy and improving healthcare outcomes.
-          </p>
+        <div class="col-md-9">
+          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
+            <div class="caption">
+              <h2>I'm <span class="teal"> Hossein Fathollahian </span></h2>
+              <h5 style="color:#fff">Like <span class="typing" style="font-weight: 300; color:#004d40"></span></h5>
+              <!-- <h5 style="color:#00796b">Like <span class="typing" style="font-weight: 300; color:#fff"></span></h5> -->
+              <h5>As a PhD student at UIC, I focus on data visualization to transform complex data into actionable insights.
+                My work in computer vision involves developing advanced algorithms for image analysis and pattern recognition.
+                I also specialize in medical imaging, aiming to enhance diagnostic accuracy and clinical decision-making through improved image processing techniques.</h5>
+            </div>
+            <div class="social">
+              <a href="https://www.linkedin.com/in/hossein-fathollahian/" target="_blank">
+                <button class="icon-btn linkedin">
+                  <i class="fa fa-linkedin"></i>
+                </button>
+              </a>
+              <a href="https://github.com/hosseinfatho/" target="_blank">
+                <button class="icon-btn github">
+                  <i class="fa fa-github"></i>
+                </button>
+              </a>
 
-          <div class="social">
-            <a href="https://www.linkedin.com/in/hossein-fathollahian/" target="_blank">
-              <button class="icon-btn linkedin">
-                <i class="fa fa-linkedin"></i>
-              </button>
-            </a>
-            <a href="https://github.com/hosseinfatho/" target="_blank">
-              <button class="icon-btn github">
-                <i class="fa fa-github"></i>
-              </button>
-            </a>
+              <!-- <a href="https://angel.co/u/Hossein-Fathollahian" target="_blank">
+                <button class="icon-btn angellist">
+                  <i class="fa fa-angellist"></i>
+                </button>
+              </a> -->
+
+              <!-- <a href="https://www.linkedin.com/in/hossein-fathollahian/" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+              </a> -->
+            </div>
+            <div class='buttons'>
+              <a href="#about" class="readme">Read More</a>
+              <a href="#contact" class="contactme">Contact Me</a>
+            </div>
           </div>
         </div>
       </div>
@@ -644,6 +337,7 @@
           </div>
           <div class="card-action">
             <span>Sep 2010 - Dec 2013 | Tehran, Iran</span>
+            <span>Sep 2022 - Dec 2023 | Tehran, Iran</span>
           </div>
         </div>
 
@@ -901,18 +595,11 @@
   <!-- typed.js -->
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script type="text/javascript">
-    var typed = new Typed('.typing', {
-        strings: [
-            "Computer Vision Researcher",
-            "Data Visualization Specialist",
-            "Medical Imaging Expert"
-        ],
-        typeSpeed: 60,
-        backSpeed: 40,
-        loop: true,
-        showCursor: true,
-        cursorChar: '|',
-        autoInsertCss: true
+    var typed = new Typed('.typing',{
+      strings: ["Digital Image Processing", "Data Visualization", "Computer Vision"],
+      loop: true,
+      typeSpeed: 80,
+      backSpeed: 40
     });
   </script>
 
@@ -933,35 +620,6 @@
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
       })
     })
-  </script>
-
-  <!-- Smooth scroll -->
-  <script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-          });
-      });
-  });
-
-  // Intersection Observer for fade-in animations
-  const observerOptions = {
-      threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              entry.target.classList.add('fade-in');
-          }
-      });
-  }, observerOptions);
-
-  document.querySelectorAll('.card, .skill-icon, .education-card').forEach((el) => {
-      observer.observe(el);
-  });
   </script>
 </body>
 
