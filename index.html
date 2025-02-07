@@ -5,8 +5,8 @@
   <style>
     /* Experience section */
     #experience {
-      padding: 40px 0;  /* Space around the section */
-      background-color: #f4f4f4;  /* Light background for the section */
+      padding: 40px 0;
+      background: linear-gradient(135deg, #f4f4f4 0%, #e0e0e0 100%);
     }
     
     #experience .page-title {
@@ -23,22 +23,41 @@
     }
     
     .card {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Soft shadow for cards */
-      margin-bottom: 20px;  /* Space between cards */
-      padding: 20px;
-      transition: transform 0.3s ease;  /* Smooth hover effect */
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      margin-bottom: 25px;
+      padding: 25px;
+      transition: all 0.4s ease;
+      border-left: 5px solid #00796b;
     }
     
     .card:hover {
-      transform: translateY(-5px);  /* Hover effect for card lift */
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     }
     
     .card h5 {
-      font-size: 1.5rem;
-      color: #00796b;  /* Teal color for the job title */
-      margin-bottom: 10px;
+      font-size: 1.6rem;
+      color: #00796b;
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .card h5::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #00796b;
+      transition: width 0.3s ease;
+    }
+    
+    .card:hover h5::after {
+      width: 100px;
     }
     
     .card p {
@@ -53,16 +72,109 @@
     }
     
     .card ul li {
-      font-size: 1rem;
-      color: #424242;  /* Darker gray for text */
-      margin-bottom: 8px;
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    
+    .card ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #00796b;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+    
+    .card ul li:hover::before {
+      transform: translateX(5px);
     }
     
     .duration {
+      display: inline-block;
+      padding: 8px 15px;
+      background: rgba(0, 121, 107, 0.1);
+      border-radius: 20px;
       font-size: 0.9rem;
-      color: #00796b;  /* Teal for the duration text */
-      font-weight: bold;
+      color: #00796b;
+      margin-top: 15px;
+      transition: all 0.3s ease;
     }
+    
+    .card:hover .duration {
+      background: rgba(0, 121, 107, 0.2);
+      transform: scale(1.05);
+    }
+    
+    /* Skills section improvements */
+    .skill-item {
+      display: inline-block;
+      padding: 6px 12px;
+      margin: 5px;
+      background: #00796b;
+      color: white;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    
+    .skill-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);
+    }
+    
+    /* Project section improvements */
+    .project-card {
+      border-radius: 15px;
+      overflow: hidden;
+      border: none;
+      border-left: 5px solid #00796b;
+    }
+    
+    .project-title {
+      color: #00796b;
+      font-weight: 600;
+      margin-bottom: 15px;
+      position: relative;
+    }
+    
+    .project-title::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: #00796b;
+      transition: width 0.3s ease;
+    }
+    
+    .project-card:hover .project-title::after {
+      width: 80px;
+    }
+    
+    /* Animation for page load */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .card {
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+    }
+    
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+    .card:nth-child(4) { animation-delay: 0.8s; }
     
     @media (max-width: 768px) {
       #experience .page-title {
@@ -83,6 +195,190 @@
     
       .container {
         padding: 0 10px;  /* Adjust padding for smaller screens */
+      }
+    }
+
+    /* Intro section improvements */
+    #intro {
+      position: relative;
+      background: linear-gradient(45deg, #f5f5f5 0%, #e0e0e0 100%);
+      overflow: hidden;
+    }
+
+    #intro::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0, 121, 107, 0.1) 0%, transparent 100%);
+      z-index: 1;
+    }
+
+    #intro .content {
+      position: relative;
+      z-index: 2;
+    }
+
+    #intro h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(45deg, #00796b, #009688);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    #intro h2 span {
+      position: relative;
+      display: inline-block;
+      animation: slideInLeft 1.2s ease-out;
+    }
+
+    #intro h5 {
+      font-size: 1.8rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    #intro p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #424242;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1.8s ease-out;
+    }
+
+    #intro strong {
+      color: #00796b;
+      font-weight: 600;
+      position: relative;
+    }
+
+    #intro strong::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #00796b;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    #intro strong:hover::after {
+      transform: scaleX(1);
+    }
+
+    .social {
+      margin-top: 2rem;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    .icon-btn {
+      padding: 12px;
+      margin: 0 10px;
+      border-radius: 50%;
+      border: 2px solid #00796b;
+      background: transparent;
+      color: #00796b;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .icon-btn:hover {
+      background: #00796b;
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);
+    }
+
+    .buttons {
+      margin-top: 2.5rem;
+      animation: fadeInUp 2.2s ease-out;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 12px 30px;
+      margin: 0 15px;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .readme {
+      background: #00796b;
+      color: white;
+      border: 2px solid #00796b;
+    }
+
+    .contactme {
+      background: transparent;
+      color: #00796b;
+      border: 2px solid #00796b;
+    }
+
+    .readme:hover, .contactme:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #intro h2 {
+        font-size: 2.5rem;
+      }
+
+      #intro h5 {
+        font-size: 1.5rem;
+      }
+
+      #intro p {
+        font-size: 1.1rem;
+      }
+
+      .buttons a {
+        display: block;
+        margin: 15px auto;
+        max-width: 200px;
       }
     }
     </style>
@@ -297,12 +593,12 @@ class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small">
 <h2>I'm <span > Hossein Fathollahian </span></h2>
 <h5 style="color:#090909">Like <span class="typing" style="font-weight: 400; color:#040a09"></span></h5>
 <h5>
-  As a passionate PhD student at UIC, I’m deeply immersed in the world of data visualization, where I transform intricate datasets into clear, impactful insights.
+  As a passionate PhD student at UIC, I'm deeply immersed in the world of data visualization, where I transform intricate datasets into clear, impactful insights.
 </h5>
 <p>
-  Passionate about<strong> data science, engineering, and visualization</strong>. Interested in big data, machine learning,computer vision, and medical image processing. Focused on turning complex data into clear insights using
-machine learning and AI. pushing boundaries—developing cutting-edge algorithms to unlock the potential of data analysis and pattern recognition. But that’s not all! I’m also specializing in <strong>medical imaging</strong>, with a mission to revolutionize diagnostic accuracy and elevate clinical decision-making.
-  By refining image processing techniques, I’m helping shape the future of healthcare one pixel at a time!
+  My research in <strong>computer vision</strong> is all about pushing boundaries—developing cutting-edge algorithms to unlock the potential of image analysis and pattern recognition.
+  But that's not all! I'm also specializing in <strong>medical imaging</strong>, with a mission to revolutionize diagnostic accuracy and elevate clinical decision-making.
+  By refining image processing techniques, I'm helping shape the future of healthcare one pixel at a time!
 </p>
 
 </div>
@@ -349,15 +645,18 @@ machine learning and AI. pushing boundaries—developing cutting-edge algorithms
            A Software Developer with a passion for Backend Development and Artificial Intelligence.
          </h2>
        </blockquote> -->        
-<p>
-<p>
-  I'm a Ph.D. student in Computer Science at the <a href="https://www.uic.edu/" target="_blank">University of Illinois Chicago</a> (UIC) under the supervision of <a href="https://cs.uic.edu/profiles/g-marai/" target="_blank">Prof. G. Elisabeta (Liz) Marai</a>. 
-  I obtained my master's in Telecommunication Engineering at <a href="https://en.sbu.ac.ir/" target="_blank"> Shahid Beheshti University of Tehran, Iran. 
-  I'm currently working as a Research Assistant at the <a href="https://www.evl.uic.edu/" target="_blank">Electronic Visualization Laboratory</a> (EVL).
-  My research interests are Visualization, Computer vision, and Image processing.
-</p>
-
-</p>
+       <style>
+        .highlight-link {
+            color: #0f15d2;
+        }
+    </style>
+    
+    <p>
+        I'm a Ph.D. student in Computer Science at the <a href="https://www.uic.edu/" target="_blank" class="highlight-link">University of Illinois Chicago</a> (UIC) under the supervision of <a href="https://cs.uic.edu/profiles/g-marai/" target="_blank" class="highlight-link">Prof. G. Elisabeta (Liz) Marai</a>. 
+        I obtained my master's in Telecommunication Engineering at <a href="https://en.sbu.ac.ir/" target="_blank" class="highlight-link">Shahid Beheshti University of Tehran, Iran</a>.
+        I'm currently working as a Research Assistant at the <a href="https://www.evl.uic.edu/" target="_blank" class="highlight-link">Electronic Visualization Laboratory</a> (EVL).
+        My research interests are Visualization, Computer vision, and Image processing.
+    </p>
 <p>
 <ul>
 <li><b>Programming Languages:</b> Matlab, Python, JavaScript, C++, HTML/CSS, Bash</li>
@@ -394,10 +693,11 @@ which provides professional development, interesting experiences and personal gr
 
 <!-- Third Section: Experience -->
 <section id="experience" class="section scrollspy">
-  <h3 class="page-title white-text teal">Experience</h3>
+  <h3 class="page-title white-text teal" style="text-align: left;">Experience</h3>
   <div >
     <div class="card">
       <h5>1- Graduate Research Assistant</h5>
+
       <p>Electronic Visualization Laboratory (EVL), UIC</p>
       <ul>
         <li>Working on advanced visualization techniques for medical imaging data</li>
