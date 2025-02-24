@@ -383,37 +383,63 @@
         max-width: 200px;
       }
     }
+    .portfolio-category {
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+    display: block;
+    border-radius: 12px;
+}
+
+.portfolio-category img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.portfolio-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);
+}
+.portfolio-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .portfolio-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .portfolio-item a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #00796b;
+            font-weight: bold;
+        }
     </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hossein Fathollahian | PhD Student in Computer Science at UIC</title>
     
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PGZH8HT');</script>
-<!-- End Google Tag Manager -->
-
-<!-- Materialize - Compiled and minified CSS-->
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
 <!-- Font Awesome Icon - CSS-->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
 <!-- Custom Styles-->
 <link rel="stylesheet" href="/assets/css/style.css" />
 <title>Hossein Fathollahian | PhD Student in Computer Science at University OF Illinois at Chicago (UIC)</title>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
-gtag('js', new Date());
-
-gtag('config', 'UA-126939217-2');
-</script>
 
 <!-- Open Graph-->
 <meta property="og:locale" content="en_US" />
@@ -432,19 +458,8 @@ gtag('config', 'UA-126939217-2');
 <meta name="twitter:url" content="https://twitter.com/Hossein_Fathollahian" />
 <meta name="author" content="Hossein_Fathollahian" />
 <meta name="description" content="Computer Science Engineer with a passion for backend development and artificial intelligence." />
-<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png" />
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-icon-192x192.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png" />
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png" /> 
 <link rel="manifest" href="/assets/img/favicon/manifest.json" />
 <meta name="msapplication-TileColor" content="#ffffff" />
 <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
@@ -461,8 +476,6 @@ gtag('config', 'UA-126939217-2');
 height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 
-<!-- Navigation Menu-->
-<!-- Nav class 1 -->
 <nav class="hide-on-small-only">
 <ul class="side-nav fixed section table-of-contents">
 
@@ -484,53 +497,33 @@ class="mdi-action-trending-up small"></i><span>Experience</span></a>
 </li>
 
 <li class="bold">
-<!-- mdi-av-web small
-            mdi-av-my-library-books small-->
-<a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-</li>
-
-<li class="bold">
-<!--
-       ICONS:
-       mdi-action-assessment
-       mdi-social-poll
-       mdi-av-equalizer
-       -->
 <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
 class="mdi-action-assessment small"></i><span>Skills</span></a>
 </li>
 
 <li class="bold">
-<!--
-       ICONS:
-       -->
+  <li class="bold">
+    <!-- mdi-av-web small
+                mdi-av-my-library-books small-->
+    <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
+    class="mdi-av-my-library-books small"></i><span>Projects</span></a>
+    </li>
+    <li class="bold">
+      <a href="#portfolio" class="waves-effect waves-dark teal-text">
+          <i class="mdi-action-work small"></i><span>Portfolio</span>
+      </a>
+    </li>
 <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
 class="mdi-social-school small"></i><span>Education</span></a>
 </li>
 
 <li class="bold">
-<!-- 
-       1. mdi-communication-contacts
-       2. mdi-content-mail
-       3. mdi-communication-email
-       -->
 <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
 class="mdi-content-mail small"></i><span>Contact</span></a>
 </li>
 
 <li class="bold">
-<!--
-       ICONS:
-       1. mdi-action-description
-       2. mdi-file-folder
-       3. mdi-file-folder-open
-       4. mdi-file-attachment
-       5. mdi-file-folder-shared
-       -->
-<!-- <a aria-label="Open Hossein's resume in a new tab" href="#resume" target="_blank"
-         onclick="window.open('https://drive.google.com/file/d/1vYi-bMyIsZPve0x_clxY8xsDtiHiOMd3/view?usp=sharing')"
-         class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a> -->
+
 <a aria-label="Open Hossein's resume in a new tab" href="https://Hosseinfatho.github.io/resume/Hossein Fathollahian-Resume.pdf" target="_blank"
 class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>  
 </li>
@@ -562,6 +555,12 @@ class="mdi-action-trending-up small"></i><span>Experience</span></a>
 <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
 class="mdi-av-my-library-books small"></i><span>Projects</span></a>
 </li>
+<li class="bold">
+  <a href="#portfolio" class="waves-effect waves-dark teal-text">
+      <i class="mdi-action-work small"></i><span>Portfolio</span>
+  </a>
+</li>
+
 <li class="bold">
 <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
 class="mdi-action-assessment small"></i><span>Skills</span></a>
@@ -619,19 +618,6 @@ As a passionate PhD student at UIC, I'm deeply immersed in the world of machine 
 <i class="fa fa-github"></i>
 </button>
 </a>
-
-<!-- <a href="https://angel.co/u/Hossein-Fathollahian" target="_blank">
-               <button class="icon-btn angellist">
-                 <i class="fa fa-angellist"></i>
-               </button>
-             </a> -->
-
-<!-- <a href="https://www.linkedin.com/in/hossein-fathollahian/" target="_blank">
-                 <span class="fa-stack fa-lg">
-                   <i class="fa fa-circle fa-stack-2x"></i>
-                   <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                 </span>
-             </a> -->
 </div>
 <div class='buttons'>
 <a href="#about" class="readme">Read More</a>
@@ -646,11 +632,7 @@ As a passionate PhD student at UIC, I'm deeply immersed in the world of machine 
 <section id="about" class="section scrollspy">
 <h3 class="page-title white-text teal">About</h3>
 <div class="container flow-text">
-<!-- <blockquote>
-         <h2>
-           A Software Developer with a passion for Backend Development and Artificial Intelligence.
-         </h2>
-       </blockquote> -->        
+    
        <style>
         .highlight-link {
             color: #0f15d2;
@@ -664,44 +646,12 @@ As a passionate PhD student at UIC, I'm deeply immersed in the world of machine 
         My research interests are Visualization, Computer vision, and Image processing.
     </p>
 <p>
-<ul>
-<li><b>Programming Languages:</b> Python, C++, JavaScript, Matlab, Bash</li>
-<li><b>Databases:</b> MySQL, PostgreSQL, MongoDB</li>
-<li><b>Libraries:</b> NumPy, Pandas, OpenCV, SciPy, scikit-learn, Matplotlib</li>
-<li><b>Deep Learning Frameworks:</b> TensorFlow, PyTorch, Keras</li>
-<li><b>Visualization Libraries:</b> Matplotlib, Seaborn, Plotly, Altair, Vega-Lite</li>
-<li><b>Frameworks:</b> Flask, Django, Node.js, Bootstrap</li>
-<li><b>Big Data & Processing:</b> Apache Beam</li>
-<li><b>CI/CD Tools:</b> GitHub Actions, GitLab CI/CD, Jenkins, Docker</li>
-<li><b>Tools & Technologies:</b> Git, Docker, AWS, WSL, Jupyter Notebook</li>
-</ul>
-
-</p>
-
-<!-- <p>
-         
-         Detail-oriented Software Developer with professional experience in Backend Development, Machine Learning, Computer Vision. I am adept in Python, Django, Flask, SQL, Machine Learning, Computer Vision.           
-       </p> -->
-<p>
 Looking for an opportunity to research in a challenging position combining my skills in Software Engineering, 
 which provides professional development, interesting experiences and personal growth.
 </p>
-<!-- <p>
-         Another Paragraph
-       </p>  -->
-<!-- <p>
-       <strong>Current Focus</strong>:&nbsp;<a aria-label="Navigate to the Inclusive Design Patterns homepage"
-         href="https://www.smashingmagazine.com/inclusive-design-patterns/">Accessibility</a>&nbsp;//&nbsp;<a
-         aria-label="Navigate to the Full Stack React homepage"
-         href="https://www.fullstackreact.com/">React</a>&nbsp;//&nbsp;<a
-         aria-label='Navigate to the article "Scalable CSS"'
-         href="https://mrmrs.github.io/writing/2016/03/24/scalable-css/">Design Systems</a>
-       </p> -->
+
 </div>
 </section>
-
-
-<!-- Third Section: Experience -->
 <section id="experience" class="section scrollspy">
   <h3 class="page-title white-text teal" style="text-align: left;">Experience</h3>
   <div >
@@ -751,12 +701,18 @@ which provides professional development, interesting experiences and personal gr
   </div>
 </section>
 
-
-
-<!-- Fourth Section: Projects -->
-<!-- Fifth Section: Skills -->
 <section id="skills" class="section scrollspy">
 <h3 class="page-title white-text teal">Skills</h3>
+<div>
+  <p>
+    <ul>
+    <li><b>Programming Languages:</b> Python, C++, JavaScript, Matlab, Bash</li>
+    <li><b>Databases:</b> MySQL, PostgreSQL, MongoDB</li>
+   
+    </ul>
+    
+    </p>
+</div>
 <div >
 <!-- Languages and Databases -->
 <div class="card">
@@ -784,7 +740,8 @@ which provides professional development, interesting experiences and personal gr
 </div>
 </div>
 </div>
-
+<li><b>Libraries:</b> NumPy, Pandas, OpenCV, SciPy, scikit-learn, Matplotlib</li>
+<li><b>Visualization Libraries:</b> Matplotlib, Seaborn, Plotly, Altair, Vega-Lite</li>
 <div class="card">
 <div class="card-content">
 <h4 class="brown-text light">Libraries</h4>
@@ -807,7 +764,8 @@ which provides professional development, interesting experiences and personal gr
 </div>
 </div>
 </div>
-
+<li><b>Frameworks:</b> Flask, Django, Node.js, Bootstrap</li>
+<li><b>Deep Learning Frameworks:</b> TensorFlow, PyTorch, Keras</li>
 <!-- Frameworks -->
 <div class="card">
 <div class="card-content">
@@ -828,7 +786,8 @@ which provides professional development, interesting experiences and personal gr
 </div>
 </div>
 </div>
-
+<li><b>CI/CD Tools:</b> GitHub Actions, GitLab CI/CD, Jenkins, Docker</li>
+<li><b>Tools & Technologies:</b> Git, Docker, AWS, WSL, Jupyter Notebook</li>
 <!-- Other -->
 <div class="card">
 <div class="card-content">
@@ -870,6 +829,40 @@ which provides professional development, interesting experiences and personal gr
     </div>
   </div>
 </section>
+<!-- portfolio -->
+<section id="portfolio" class="section scrollspy">
+  <h3 class="page-title white-text teal">Portfolio</h3>
+  <div class="container">
+      <div class="row">
+        <div class="col s12 m3">
+          <a href="#data-visualization" class="portfolio-category card">
+              <img src="/assets/img/data-visualization-logo.png" alt="Data Visualization">
+              <p>Data Visualization</p>
+          </a>
+      </div>
+      <div class="col s12 m3">
+        <a href="#computer-vision" class="portfolio-category card">
+            <img src="/assets/img/computer-vision-logo.png" alt="Computer Vision">
+            <p>Computer Vision</p>
+        </a>
+    </div>
+          <div class="col s12 m3">
+              <a href="#machine-learning" class="portfolio-category card">
+                  <img src="/assets/img/machine-learning-logo.png" alt="Machine Learning">
+                  <p>Machine Learning</p>
+              </a>
+          </div>
+
+          <div class="col s12 m3">
+              <a href="#ai-research" class="portfolio-category card">
+                  <img src="/assets/img/ai-research-logo.png" alt="AI Research">
+                  <p>AI Research</p>
+              </a>
+          </div>
+          
+      </div>
+  </div>
+</section>
 
 <section id="publications" class="section scrollspy">
   <h3 class="page-title white-text teal">Publications</h3>
@@ -881,7 +874,7 @@ which provides professional development, interesting experiences and personal gr
           <div class="card-content">
            
             <p>
-              "Video Quality Measurement Based on 3-D Singular Value Decomposition" Journal of Visual Communication and Image Representation, Volume 27, February 2015, Pages 1‑6.
+             [Journal] 1- "Video Quality Measurement Based on 3-D Singular Value Decomposition" Journal of Visual Communication and Image Representation, Volume 27, February 2015, Pages 1‑6.
               Farah Torkamani‑Azar, Hassan Imani, Hossein Fathollahian.
             </p>
              <p>
@@ -894,8 +887,6 @@ which provides professional development, interesting experiences and personal gr
     </div>
   </div>
 </section>
-
-
 <!-- Seventh Section: Education -->
 <section id="education" class="section scrollspy">
   <h3 class="page-title white-text teal">Education</h3>
@@ -954,7 +945,6 @@ which provides professional development, interesting experiences and personal gr
     </div>
   </div>
 </section>
-
 <!-- Eight Section: Contact -->
 <section id="contact" class="section scrollspy full-height">
 <h3 class="page-title white-text teal">Contact</h3>
@@ -986,37 +976,53 @@ class="hoverline" target="_blank">linkedin.com/in/hossein-fathollahian/</a></a>
 </p>
 </div>
 </section>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PGZH8HT');
+  </script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-126939217-2');
+  </script>
+ <script src="assets/vendor/typed.js/typed.min.js"></script>
+ <script>
+     var typed = new Typed('.typing', {
+         strings: ["Machine Learning & AI", "Data Visualization", "Computer Vision & Image Processing"],
+         loop: true,
+         typeSpeed: 80,
+         backSpeed: 40
+     });
+
+     document.querySelectorAll('.portfolio-category').forEach(item => {
+         item.addEventListener('click', function(event) {
+             event.preventDefault();
+             const category = this.getAttribute('href').split('=')[1];
+             window.location.href = `portfolio.html?category=${category}`;
+         });
+     });
+ </script>
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+ <script>
+     $(document).ready(function () {
+         $(".scrollspy").scrollSpy();
+         $(".button-collapse").sideNav({
+             menuWidth: 190,
+             edge: "left",
+             closeOnClick: true
+         });
+     });
+ </script>
+ 
 </main>
-
-<!-- typed.js -->
-<script src="assets/vendor/typed.js/typed.min.js"></script>
-<script type="text/javascript">
-var typed = new Typed('.typing',{
-strings: ["Machine Learning&AI ", "Data Visualization ", "Computer Vision&Image Processing "],
-loop: true,
-typeSpeed: 80,
-backSpeed: 40
-});
-</script>
-
-
-<!-- jQuery-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-<!-- Materialize - Compiled and minified JavaScript-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
-<script>
-// Materialize - Initializers
-$(document).ready(function () {
-$(".scrollspy").scrollSpy()
-// Initialize collapse button
-$(".button-collapse").sideNav({
-menuWidth: 190, // Default is 240
-edge: "left", // Choose the horizontal origin
-closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-})
-})
-</script>
 </body>
 
 </html>
