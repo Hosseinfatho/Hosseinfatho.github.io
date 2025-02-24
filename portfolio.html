@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        body {
+            background-color: #ccffcc;
+        }
+        .portfolio-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .portfolio-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .portfolio-item a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #00796b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 class="page-title center">Portfolio</h3>
+        
+        <!-- Computer Vision Section -->
+        <section id="computer-vision" class="section">
+            <h4>Computer Vision</h4>
+            <div class="portfolio-container">
+                <div class="portfolio-item">
+                    <img src="/assets/img/placeholder.jpg" alt="Project Image">
+                    <p>Project Description</p>
+                    <a href="#" target="_blank">GitHub Link</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Machine Learning Section -->
+        <section id="machine-learning" class="section">
+            <h4>Machine Learning</h4>
+            <div class="portfolio-container">
+                <div class="portfolio-item">
+                    <img src="/assets/img/placeholder.jpg" alt="Project Image">
+                    <p>Project Description</p>
+                    <a href="#" target="_blank">GitHub Link</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Visualization Section -->
+        <section id="data-visualization" class="section">
+            <h4>Data Visualization</h4>
+            <div class="portfolio-container">
+                <div class="portfolio-item">
+                    <img src="/assets/img/placeholder.jpg" alt="Project Image">
+                    <p>Project Description</p>
+                    <a href="#" target="_blank">GitHub Link</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
