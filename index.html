@@ -8,20 +8,24 @@
       padding: 40px 0;
       background: linear-gradient(135deg, #f4f4f4 0%, #e0e0e0 100%);
     }
-    
+
     #experience .page-title {
       text-align: center;
       font-size: 2.5rem;
       margin-bottom: 30px;
     }
-    
+
     #experience .container {
-      width: 100%;  /* Make the container full width */
-      max-width: 1200px;  /* Optional: Set a max width */
-      margin: 0 auto;  /* Center the container */
-      padding: 0 15px;  /* Add some padding on the sides */
+      width: 100%;
+      /* Make the container full width */
+      max-width: 1200px;
+      /* Optional: Set a max width */
+      margin: 0 auto;
+      /* Center the container */
+      padding: 0 15px;
+      /* Add some padding on the sides */
     }
-    
+
     .card {
       background: rgba(255, 255, 255, 0.95);
       border-radius: 12px;
@@ -31,12 +35,12 @@
       transition: all 0.4s ease;
       border-left: 5px solid #00796b;
     }
-    
+
     .card:hover {
       transform: translateY(-8px) scale(1.01);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     }
-    
+
     .card h5 {
       font-size: 1.6rem;
       color: #00796b;
@@ -44,7 +48,7 @@
       position: relative;
       padding-bottom: 10px;
     }
-    
+
     .card h5::after {
       content: '';
       position: absolute;
@@ -55,29 +59,30 @@
       background: #00796b;
       transition: width 0.3s ease;
     }
-    
+
     .card:hover h5::after {
       width: 100px;
     }
-    
+
     .card p {
       font-size: 1rem;
-      color: #616161;  /* Dark gray color for the company name */
+      color: #616161;
+      /* Dark gray color for the company name */
       margin-bottom: 10px;
     }
-    
+
     .card ul {
       list-style-type: disc;
       padding-left: 20px;
     }
-    
+
     .card ul li {
       position: relative;
       padding-left: 25px;
       margin-bottom: 12px;
       line-height: 1.6;
     }
-    
+
     .card ul li::before {
       content: '→';
       position: absolute;
@@ -86,11 +91,11 @@
       font-weight: bold;
       transition: transform 0.3s ease;
     }
-    
+
     .card ul li:hover::before {
       transform: translateX(5px);
     }
-    
+
     .duration {
       display: inline-block;
       padding: 8px 15px;
@@ -101,12 +106,12 @@
       margin-top: 15px;
       transition: all 0.3s ease;
     }
-    
+
     .card:hover .duration {
       background: rgba(0, 121, 107, 0.2);
       transform: scale(1.05);
     }
-    
+
     /* Skills section improvements */
     .skill-item {
       display: inline-block;
@@ -118,12 +123,12 @@
       font-size: 0.9rem;
       transition: all 0.3s ease;
     }
-    
+
     .skill-item:hover {
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);
     }
-    
+
     /* Project section improvements */
     .project-card {
       border-radius: 15px;
@@ -131,14 +136,14 @@
       border: none;
       border-left: 5px solid #00796b;
     }
-    
+
     .project-title {
       color: #00796b;
       font-weight: 600;
       margin-bottom: 15px;
       position: relative;
     }
-    
+
     .project-title::after {
       content: '';
       position: absolute;
@@ -149,52 +154,69 @@
       background: #00796b;
       transition: width 0.3s ease;
     }
-    
+
     .project-card:hover .project-title::after {
       width: 80px;
     }
-    
+
     /* Animation for page load */
     @keyframes fadeInUp {
       from {
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    
+
     .card {
       animation: fadeInUp 0.6s ease forwards;
       opacity: 0;
     }
-    
-    .card:nth-child(1) { animation-delay: 0.2s; }
-    .card:nth-child(2) { animation-delay: 0.4s; }
-    .card:nth-child(3) { animation-delay: 0.6s; }
-    .card:nth-child(4) { animation-delay: 0.8s; }
-    
+
+    .card:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .card:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
     @media (max-width: 768px) {
       #experience .page-title {
-        font-size: 2rem;  /* Adjust font size for smaller screens */
+        font-size: 2rem;
+        /* Adjust font size for smaller screens */
       }
-    
+
       .card {
-        padding: 15px;  /* Less padding for smaller screens */
+        padding: 15px;
+        /* Less padding for smaller screens */
       }
-    
+
       .card h5 {
-        font-size: 1.3rem;  /* Smaller title on mobile */
+        font-size: 1.3rem;
+        /* Smaller title on mobile */
       }
-    
+
       .card ul li {
-        font-size: 0.9rem;  /* Adjust font size for better mobile readability */
+        font-size: 0.9rem;
+        /* Adjust font size for better mobile readability */
       }
-    
+
       .container {
-        padding: 0 10px;  /* Adjust padding for smaller screens */
+        padding: 0 10px;
+        /* Adjust padding for smaller screens */
       }
     }
 
@@ -328,7 +350,8 @@
       border: 2px solid #00796b;
     }
 
-    .readme:hover, .contactme:hover {
+    .readme:hover,
+    .contactme:hover {
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);
     }
@@ -338,6 +361,7 @@
         opacity: 0;
         transform: translateY(-30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -349,6 +373,7 @@
         opacity: 0;
         transform: translateX(-50px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
@@ -359,6 +384,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -383,494 +409,691 @@
         max-width: 200px;
       }
     }
+
     .portfolio-category {
-    text-align: center;
-    padding: 20px;
-    transition: all 0.3s ease;
-    display: block;
-    border-radius: 12px;
-}
+      text-align: center;
+      padding: 20px;
+      transition: all 0.3s ease;
+      display: block;
+      border-radius: 12px;
+    }
 
-.portfolio-category img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
-}
+    .portfolio-category img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
 
-.portfolio-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);
-}
-.portfolio-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 20px;
-        }
-        .portfolio-item {
-            border: 1px solid #ddd;
-            padding: 15px;
-            text-align: center;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-        }
-        .portfolio-item a {
-            display: block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #00796b;
-            font-weight: bold;
-        }
-    </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hossein Fathollahian | PhD Student in Computer Science at UIC</title>
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width initial-scale=1" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    .portfolio-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);
+    }
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-<!-- Font Awesome Icon - CSS-->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-<!-- Custom Styles-->
-<link rel="stylesheet" href="/assets/css/style.css" />
-<title>Hossein Fathollahian | PhD Student in Computer Science at University OF Illinois at Chicago (UIC)</title>
+    .portfolio-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
 
-<!-- Open Graph-->
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Hossein Fathollahian | PhD Student in Computer Science" />
-<meta property="og:description" content="PhD Student in Computer Science" />
-<meta property="og:url" content="https://hosseinfatho.github.io/" />
-<meta property="og:site_name" content="Hossein Fathollahian | PhD Student in Computer Science" />
-<meta property="article:publisher" content="https://vhosseinfatho.github.io/" />
-<meta property="og:image" content="https://hosseinfatho.github.io/examples/preview.JPG" />
-<!-- Twitter -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@Hossein_Fathollahian" />
-<meta name="twitter:title" content="Coder | Technofreak | Explorer | Minimalist | Humane" />
-<meta name="twitter:description" content="Software Developer" />
-<meta name="twitter:url" content="https://twitter.com/Hossein_Fathollahian" />
-<meta name="author" content="Hossein_Fathollahian" />
-<meta name="description" content="Computer Science Engineer with a passion for backend development and artificial intelligence." />
+    .portfolio-item {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: center;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
 
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png" /> 
-<link rel="manifest" href="/assets/img/favicon/manifest.json" />
-<meta name="msapplication-TileColor" content="#ffffff" />
-<meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
-<meta name="theme-color" content="#ffffff" />
-<meta name="robots" content="index, follow" />
-<!-- Google Site Verification for indexing -->
-<meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
+    .portfolio-item a {
+      display: block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #00796b;
+      font-weight: bold;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hossein Fathollahian | PhD Student in Computer Science at UIC</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <!-- Font Awesome Icon - CSS-->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <!-- Custom Styles-->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <title>Hossein Fathollahian | PhD Student in Computer Science at University OF Illinois at Chicago (UIC)</title>
+
+  <!-- Open Graph-->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hossein Fathollahian | PhD Student in Computer Science" />
+  <meta property="og:description" content="PhD Student in Computer Science" />
+  <meta property="og:url" content="https://hosseinfatho.github.io/" />
+  <meta property="og:site_name" content="Hossein Fathollahian | PhD Student in Computer Science" />
+  <meta property="article:publisher" content="https://vhosseinfatho.github.io/" />
+  <meta property="og:image" content="https://hosseinfatho.github.io/examples/preview.JPG" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@Hossein_Fathollahian" />
+  <meta name="twitter:title" content="Coder | Technofreak | Explorer | Minimalist | Humane" />
+  <meta name="twitter:description" content="Software Developer" />
+  <meta name="twitter:url" content="https://twitter.com/Hossein_Fathollahian" />
+  <meta name="author" content="Hossein_Fathollahian" />
+  <meta name="description"
+    content="Computer Science Engineer with a passion for backend development and artificial intelligence." />
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/img/favicon/manifest.json" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="robots" content="index, follow" />
+  <!-- Google Site Verification for indexing -->
+  <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
 
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT"
-height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
 
-<nav class="hide-on-small-only">
-<ul class="side-nav fixed section table-of-contents">
+  <nav class="hide-on-small-only">
+    <ul class="side-nav fixed section table-of-contents">
 
-<li class="logo">
-<a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-class="brand-logo grey-blue-text">
-<img src="/assets/img/Hossein.jpg" class="circle img-responsive profile-pic" alt="avatar">
-</a>
-</li>
-
-<li class="bold">
-<a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-class="mdi-social-person small"></i><span>About</span></a>
-</li>
-<li class="bold">
-<a aria-label="Navigate to the Experience section" href="#experience"
-class="waves-effect waves-dark teal-text"><i
-class="mdi-action-trending-up small"></i><span>Experience</span></a>
-</li>
-
-<li class="bold">
-<a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-class="mdi-action-assessment small"></i><span>Skills</span></a>
-</li>
-
-<li class="bold">
-  <li class="bold">
-    <!-- mdi-av-web small
-                mdi-av-my-library-books small-->
-    <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-    class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-    </li>
-    <li class="bold">
-      <a href="#portfolio" class="waves-effect waves-dark teal-text">
-          <i class="mdi-action-work small"></i><span>Portfolio</span>
-      </a>
-    </li>
-<a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-class="mdi-social-school small"></i><span>Education</span></a>
-</li>
-
-<li class="bold">
-<a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-class="mdi-content-mail small"></i><span>Contact</span></a>
-</li>
-
-<li class="bold">
-
-<a aria-label="Open Hossein's resume in a new tab" href="https://Hosseinfatho.github.io/resume/Hossein Fathollahian-Resume.pdf" target="_blank"
-class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>  
-</li>
-</ul>
-</nav>
-
-<!-- Nav class 2 -->
-<nav class="hide-on-large only trigger z-depth-1">
-<a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
-class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-<div class="name-title">
-<a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Hossein Fathollahian</a><span class="black-text">PhD Researcher</span>
-</div>
-</nav>
-
-<!-- Nav class 3 -->
-<nav class="hide-on-large only">
-<ul id="slide-out" class="side-nav">
-<li class="bold">
-<a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-class="mdi-social-person small"></i><span>About</span></a>
-</li>
-<li class="bold">
-<a aria-label="Navigate to the Experience section" href="#experience"
-class="waves-effect waves-dark teal-text"><i
-class="mdi-action-trending-up small"></i><span>Experience</span></a>
-</li>
-<li class="bold">
-<a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-</li>
-<li class="bold">
-  <a href="#portfolio" class="waves-effect waves-dark teal-text">
-      <i class="mdi-action-work small"></i><span>Portfolio</span>
-  </a>
-</li>
-
-<li class="bold">
-<a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-class="mdi-action-assessment small"></i><span>Skills</span></a>
-</li>
-
-<li class="bold">
-<a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-class="mdi-social-school small"></i><span>Education</span></a>
-</li>
-<li class="bold">
-<a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-class="mdi-content-mail small"></i><span>Contact</span></a>
-</li>
-<li class="bold">
-<a aria-label="Open Hossein's Resume in a new tab"
-href="https://drive.google.com/file/d/1pZLxyEb-5AhLDrCZMhFRkFmkydnlaNBl/view?usp=sharing" target="_blank"
-class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-</li>
-</ul>
-</nav>
-
-<!-- Main Content-->
-<main>
-<!-- First Section: Heading lines and image -->
-<section id="intro" class="section scrollspy full-height">
-<div class="overlay"></div>
-<div class="container">
-<div class="col-md-9">
-<div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
-<div class="caption">
-<h2>I'm <span > Hossein Fathollahian </span></h2>
-<div style="width: 90%; margin: 0 auto;">
-  <h5 style="color:#090909">
-    Like <span class="typing" style="font-weight: 400; color:#040a09"></span>
-  </h5>
-  <h5>
-As a passionate PhD student at UIC, I'm deeply immersed in the world of machine learning and AI, Computer Vision, and leveraging data visualization to transform intricate datasets into clear, impactful insights.
-  </h5>
-  <p style="text-align: justify;">
-    My research in <strong> SOTA AI and machine learning </strong> is all about pushing boundaries—developing cutting-edge <strong>Data Visualization and Computer Vision</strong> algorithms to unlock the potential of image analysis and pattern recognition.  
-    But that's not all! I'm also specializing in <strong>medical imaging, cancer cells, and biomarkers</strong>, leveraging deep learning and AI-driven models to revolutionize diagnostic accuracy and elevate clinical decision-making by refining neural networks and advanced image-processing techniques.
-  </p>
-</div>
-
-
-</div>
-<div class="social">
-<a href="https://www.linkedin.com/in/hossein-fathollahian/" target="_blank">
-<button class="icon-btn linkedin">
-<i class="fa fa-linkedin"></i>
-</button>
-</a>
-<a href="https://github.com/hosseinfatho/" target="_blank">
-<button class="icon-btn github">
-<i class="fa fa-github"></i>
-</button>
-</a>
-</div>
-<div class='buttons'>
-<a href="#about" class="readme">Read More</a>
-<a href="#contact" class="contactme">Contact Me</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Second Section: About -->
-<section id="about" class="section scrollspy">
-<h3 class="page-title white-text teal">About</h3>
-<div class="container flow-text">
-    
-       <style>
-        .highlight-link {
-            color: #0f15d2;
-        }
-    </style>
-    
-    <p>
-        I'm a Ph.D. student in Computer Science at the <a href="https://www.uic.edu/" target="_blank" class="highlight-link">University of Illinois Chicago</a> (UIC) under the supervision of <a href="https://cs.uic.edu/profiles/g-marai/" target="_blank" class="highlight-link">Prof. G. Elisabeta (Liz) Marai</a>. 
-        I obtained my master's in Telecommunication Engineering at <a href="https://en.sbu.ac.ir/" target="_blank" class="highlight-link">Shahid Beheshti University of Tehran, Iran</a>.
-        I'm currently working as a Research Assistant at the <a href="https://www.evl.uic.edu/" target="_blank" class="highlight-link">Electronic Visualization Laboratory</a> (EVL).
-        My research interests are Visualization, Computer vision, and Image processing.
-    </p>
-<p>
-Looking for an opportunity to research in a challenging position combining my skills in Software Engineering, 
-which provides professional development, interesting experiences and personal growth.
-</p>
-
-</div>
-</section>
-<section id="experience" class="section scrollspy">
-  <h3 class="page-title white-text teal" style="text-align: left;">Experience</h3>
-  <div >
-    <div class="card">
-      <h5>1- Graduate Research Assistant</h5>
-
-      <p>Electronic Visualization Laboratory (EVL), UIC</p>
-      <ul>
-        <li>Working on advanced visualization techniques for medical imaging data</li>
-        <li>Developing computer vision algorithms for image analysis</li>
-        <li>Collaborating with interdisciplinary teams on healthcare applications</li>
-      </ul>
-      <div class="duration">Jan 2024 - Present | Chicago, IL</div>
-    </div>
-
-    <div class="card">
-      <h5>2- Graduate Teaching Assistant</h5>
-      <p>University of Chicago Illinois</p>
-      <ul>
-        <li>CS 141: Introduction to Computer Science(Prof. Mark Hodges)</li>
-        <li>CS 251: Data Structures and Algorithms(Prof. Daniel Ayala)</li>
-        <li>CS 211: Computer Programming practicum(Prof. Scott Reckinger)</li>
-      </ul>
-      <div class="duration">Spring-Fall 2024, Spring 2025 |UIC, Chicago, USA</div>
-    </div>
-
-    <div class="card">
-      <h5>3- Head of Low Voltage System Design and Research and Development</h5>
-      <p>MENIC Co., Tehran, Iran</p>
-      <ul>
-        <li>Designing, consulting, and implementing telecommunication and low voltage systems in industrial plants and buildings (CCTV, telephone, speakers, fire alarms, paging, and computer networks)</li>
-        <li>Leading innovation and strategy in research and development to drive technological advancement and growth</li>
-      </ul>
-      <div class="duration">Jan 2017 - Sep 2023 | Tehran, Iran</div>
-    </div>
-
-    <div class="card">
-      <h5>4- Image Processing Specialist</h5>
-      <p>Shahid Beheshti University, Tehran, Iran</p>
-      <ul>
-        <li>Image and video feature extraction and pattern recognition in textiles and painting quality measurement</li>
-        <li>MATLAB and Python programming for various image processing tasks</li>
-      </ul>
-      <div class="duration">Nov 2011 - Dec 2012 | Tehran, Iran</div>
-    </div>
-
-  </div>
-</section>
-
-<section id="skills" class="section scrollspy">
-<h3 class="page-title white-text teal">Skills</h3>
-<div>
-  <p>
-    <ul>
-    <li><b>Programming Languages:</b> Python, C++, JavaScript, Matlab, Bash</li>
-    <li><b>Databases:</b> MySQL, PostgreSQL, MongoDB</li>
-   
-    </ul>
-    
-    </p>
-</div>
-<div >
-<!-- Languages and Databases -->
-<div class="card">
-<div class="card-content">
-<h4 class="brown-text light">Languages and Databases</h4>
-<div class="row text-center">
-<div class="col s4 m2">
-<img alt="" src="/assets/img/python-logo-1-300x300.jpg" class="responsive-img" />Python
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/html5-300x300.jpg" class="responsive-img" />HTML5
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/css3-300x300.jpg" class="responsive-img" />CSS3
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/mysql-logo-1-300x300.jpg" class="responsive-img" />MySQL
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/postgresql-logo.png" class="responsive-img" />PostgreSQL
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/shell-logo-1-300x300.jpg" class="responsive-img" />Shell Scripting
-</div>
-</div>
-</div>
-</div>
-<li><b>Libraries:</b> NumPy, Pandas, OpenCV, SciPy, scikit-learn, Matplotlib</li>
-<li><b>Visualization Libraries:</b> Matplotlib, Seaborn, Plotly, Altair, Vega-Lite</li>
-<div class="card">
-<div class="card-content">
-<h4 class="brown-text light">Libraries</h4>
-<div class="row text-center">
-<div class="col s4 m2">
-<img alt="" src="/assets/img/numpy-logo-1-500x500.jpg" class="responsive-img" />NumPy
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/pandas-logo-2-500x500.jpg" class="responsive-img" />Pandas
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/opencv-logo-1-500x500.jpg" class="responsive-img" />OpenCV
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/sk-learn-logo-1-500x500.jpg" class="responsive-img" />scikit-learn
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/matplotlib-logo-1-500x500.jpg" class="responsive-img" />matplotlib
-</div>
-</div>
-</div>
-</div>
-<li><b>Frameworks:</b> Flask, Django, Node.js, Bootstrap</li>
-<li><b>Deep Learning Frameworks:</b> TensorFlow, PyTorch, Keras</li>
-<!-- Frameworks -->
-<div class="card">
-<div class="card-content">
-<h4 class="brown-text light">Frameworks</h4>
-<div class="row text-center">
-<div class="col s4 m2">
-<img alt="" src="/assets/img/django-logo.webp" class="responsive-img" />Django
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/flask-logo.png" class="responsive-img" />Flask
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/tensorflow-logo-1.png" class="responsive-img" />TensorFlow
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/pytorch-logo.png" class="responsive-img" />PyTorch
-</div>
-</div>
-</div>
-</div>
-<li><b>CI/CD Tools:</b> GitHub Actions, GitLab CI/CD, Jenkins, Docker</li>
-<li><b>Tools & Technologies:</b> Git, Docker, AWS, WSL, Jupyter Notebook</li>
-<!-- Other -->
-<div class="card">
-<div class="card-content">
-<h4 class="brown-text light">Other</h4>
-<div class="row text-center">
-<div class="col s4 m2">
-<img alt="" src="/assets/img/git.png" class="responsive-img" />Git
-</div>
-<div class="col s4 m2">
-<img alt="" src="/assets/img/aws.png" class="responsive-img" />AWS
-</div>
-</div>
-</div>
-</div>
-
-</div>
-</section>
-<section id="projects" class="section">
-  <h3 class="page-title white-text teal" >Projects</h3>
-  <div>
-    <div class="card project-card">
-      <h5 class="project-title"> 1- Medical Image Visualization</h5>
-      <p>Advanced visualization techniques for medical imaging data analysis.</p>
-      <h5 class="project-title"> 2- Optimizing Camera Position for Minimal Occlusion and Maximum Interaction</h5>
-      <p>
-          This project focuses on determining the best camera placement to reduce visual obstructions while enhancing interaction efficiency. Using computational techniques and analysis, we aim to develop an algorithm for optimal camera positioning, which can be applied in gaming, virtual reality, and other interactive environments.
-      </p>
-      <h5 class="project-title"> 3- AI‑Powered Lymph Node Detection in Mammography for Early Cancer Detection</h5>
-
-      <p>
-        This project utilizes AI and advanced image processing techniques to detect lymph nodes in mammography images. The goal is to aid in early diagnosis and improve accuracy in breast cancer assessment. By automating the detection process, we aim to reduce human error and provide better outcomes for patients.
-      </p>
-      <div class="skill-list">
-
-        <span class="skill-item">Python</span>
-        <span class="skill-item">OpenCV</span>
-        <span class="skill-item">TensorFlow</span>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- portfolio -->
-<section id="portfolio" class="section scrollspy">
-  <h3 class="page-title white-text teal">Portfolio</h3>
-  <div class="container">
-      <div class="row">
-        <div class="col s12 m3">
-          <a href="#data-visualization" class="portfolio-category card">
-              <img src="/assets/img/data-visualization-logo.png" alt="Data Visualization">
-              <p>Data Visualization</p>
-          </a>
-      </div>
-      <div class="col s12 m3">
-        <a href="#computer-vision" class="portfolio-category card">
-            <img src="/assets/img/computer-vision-logo.png" alt="Computer Vision">
-            <p>Computer Vision</p>
+      <li class="logo">
+        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
+          class="brand-logo grey-blue-text">
+          <img src="/assets/img/Hossein.jpg" class="circle img-responsive profile-pic" alt="avatar">
         </a>
+      </li>
+
+      <li class="bold">
+        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
+            class="mdi-social-person small"></i><span>About</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Experience section" href="#experience"
+          class="waves-effect waves-dark teal-text"><i
+            class="mdi-action-trending-up small"></i><span>Experience</span></a>
+      </li>
+
+      <li class="bold">
+        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
+            class="mdi-action-assessment small"></i><span>Skills</span></a>
+      </li>
+
+      <li class="bold">
+      <li class="bold">
+        <!-- mdi-av-web small
+                mdi-av-my-library-books small-->
+        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
+            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
+      </li>
+      <li class="bold">
+        <a href="#portfolio" class="waves-effect waves-dark teal-text">
+          <i class="mdi-action-work small"></i><span>Portfolio</span>
+        </a>
+      </li>
+      <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
+          class="mdi-social-school small"></i><span>Education</span></a>
+      </li>
+
+      <li class="bold">
+        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
+            class="mdi-content-mail small"></i><span>Contact</span></a>
+      </li>
+
+      <li class="bold">
+
+        <a aria-label="Open Hossein's resume in a new tab"
+          href="https://Hosseinfatho.github.io/resume/Hossein Fathollahian-Resume.pdf" target="_blank"
+          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Nav class 2 -->
+  <nav class="hide-on-large only trigger z-depth-1">
+    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
+      class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <div class="name-title">
+      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Hossein
+        Fathollahian</a><span class="black-text">PhD Researcher</span>
     </div>
-          <div class="col s12 m3">
-              <a href="#machine-learning" class="portfolio-category card">
-                  <img src="/assets/img/machine-learning-logo.png" alt="Machine Learning">
-                  <p>Machine Learning</p>
-              </a>
-          </div>
+  </nav>
 
-          <div class="col s12 m3">
-              <a href="#ai-research" class="portfolio-category card">
-                  <img src="/assets/img/ai-research-logo.png" alt="AI Research">
-                  <p>AI Research</p>
+  <!-- Nav class 3 -->
+  <nav class="hide-on-large only">
+    <ul id="slide-out" class="side-nav">
+      <li class="bold">
+        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
+            class="mdi-social-person small"></i><span>About</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Experience section" href="#experience"
+          class="waves-effect waves-dark teal-text"><i
+            class="mdi-action-trending-up small"></i><span>Experience</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
+            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
+      </li>
+      <li class="bold">
+        <a href="#portfolio" class="waves-effect waves-dark teal-text">
+          <i class="mdi-action-work small"></i><span>Portfolio</span>
+        </a>
+      </li>
+
+      <li class="bold">
+        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
+            class="mdi-action-assessment small"></i><span>Skills</span></a>
+      </li>
+
+      <li class="bold">
+        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
+            class="mdi-social-school small"></i><span>Education</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
+            class="mdi-content-mail small"></i><span>Contact</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Open Hossein's Resume in a new tab"
+          href="https://drive.google.com/file/d/1pZLxyEb-5AhLDrCZMhFRkFmkydnlaNBl/view?usp=sharing" target="_blank"
+          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content-->
+  <main>
+  
+    <!-- First Section: Heading lines and image -->
+    <section id="intro" class="section scrollspy full-height">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="col-md-9">
+          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
+            <div class="caption">
+              <h2>I'm <span> Hossein Fathollahian </span></h2>
+              <div style="width: 90%; margin: 0 auto;">
+                <h5 style="color:#090909">
+                  Like <span class="typing" style="font-weight: 400; color:#040a09"></span>
+                </h5>
+                <h5>
+                  As a passionate PhD student at UIC, I'm deeply immersed in the world of machine learning and AI,
+                  Computer Vision, and leveraging data visualization to transform intricate datasets into clear,
+                  impactful insights.
+                </h5>
+                <p style="text-align: justify;">
+                  My research in <strong> SOTA AI and machine learning </strong> is all about pushing
+                  boundaries—developing cutting-edge <strong>Data Visualization and Computer Vision</strong> algorithms
+                  to unlock the potential of image analysis and pattern recognition.
+                  But that's not all! I'm also specializing in <strong>medical imaging, cancer cells, and
+                    biomarkers</strong>, leveraging deep learning and AI-driven models to revolutionize diagnostic
+                  accuracy and elevate clinical decision-making by refining neural networks and advanced
+                  image-processing techniques.
+                </p>
+              </div>
+
+            </div>
+            <div class="social">
+              <a href="https://www.linkedin.com/in/hossein-fathollahian/" target="_blank">
+                <button class="icon-btn linkedin">
+                  <i class="fa fa-linkedin"></i>
+                </button>
               </a>
+              <a href="https://github.com/hosseinfatho/" target="_blank">
+                <button class="icon-btn github">
+                  <i class="fa fa-github"></i>
+                </button>
+              </a>
+            </div>
+            <div class='buttons'>
+              <a href="#about" class="readme">Read More</a>
+              <a href="#contact" class="contactme">Contact Me</a>
+            </div>
           </div>
-          
+        </div>
       </div>
-  </div>
-</section>
+    </section>
 
-<section id="publications" class="section scrollspy">
-  <h3 class="page-title white-text teal">Publications</h3>
-  <div >
-    <div class="row">
-      <!-- Publication 1 -->
+    <!-- Second Section: About -->
+    <section id="about" class="section scrollspy">
+      <h3 class="page-title white-text teal">About</h3>
+      <div class="container flow-text">
+
+        <style>
+          .highlight-link {
+            color: #0f15d2;
+          }
+        </style>
+
+        <p>
+          I'm a Ph.D. student in Computer Science at the <a href="https://www.uic.edu/" target="_blank"
+            class="highlight-link">University of Illinois Chicago</a> (UIC) under the supervision of <a
+            href="https://cs.uic.edu/profiles/g-marai/" target="_blank" class="highlight-link">Prof. G. Elisabeta (Liz)
+            Marai</a>.
+          I obtained my master's in Telecommunication Engineering at <a href="https://en.sbu.ac.ir/" target="_blank"
+            class="highlight-link">Shahid Beheshti University of Tehran, Iran</a>.
+          I'm currently working as a Research Assistant at the <a href="https://www.evl.uic.edu/" target="_blank"
+            class="highlight-link">Electronic Visualization Laboratory</a> (EVL).
+          My research interests are Visualization, Computer vision, and Image processing.
+        </p>
+        <p>
+          Looking for an opportunity to research in a challenging position combining my skills in Software Engineering,
+          which provides professional development, interesting experiences and personal growth.
+        </p>
+
+      </div>
+    </section>
+    <section id="experience" class="section scrollspy">
+      <h3 class="page-title white-text teal" style="text-align: left;">Experience</h3>
       <div>
         <div class="card">
+<<<<<<< HEAD
+          <h5>1- Graduate Research Assistant</h5>
+
+          <p>Electronic Visualization Laboratory (EVL), UIC</p>
+          <ul>
+            <li>Working on advanced visualization techniques for medical imaging data</li>
+            <li>Developing computer vision algorithms for image analysis</li>
+            <li>Collaborating with interdisciplinary teams on healthcare applications</li>
+          </ul>
+          <div class="duration">Jan 2024 - Present | Chicago, IL</div>
+        </div>
+
+        <div class="card">
+          <h5>2- Graduate Teaching Assistant</h5>
+          <p>University of Chicago Illinois</p>
+          <ul>
+            <li>CS 141: Introduction to Computer Science(Prof. Mark Hodges)</li>
+            <li>CS 251: Data Structures and Algorithms(Prof. Daniel Ayala)</li>
+            <li>CS 211: Computer Programming practicum(Prof. Scott Reckinger)</li>
+          </ul>
+          <div class="duration">Spring-Fall 2024, Spring 2025 |UIC, Chicago, USA</div>
+        </div>
+
+        <div class="card">
+          <h5>3- Head of Low Voltage System Design and Research and Development</h5>
+          <p>MENIC Co., Tehran, Iran</p>
+          <ul>
+            <li>Designing, consulting, and implementing telecommunication and low voltage systems in industrial plants
+              and buildings (CCTV, telephone, speakers, fire alarms, paging, and computer networks)</li>
+            <li>Leading innovation and strategy in research and development to drive technological advancement and
+              growth</li>
+          </ul>
+          <div class="duration">Jan 2017 - Sep 2023 | Tehran, Iran</div>
+        </div>
+
+        <div class="card">
+          <h5>4- Image Processing Specialist</h5>
+          <p>Shahid Beheshti University, Tehran, Iran</p>
+          <ul>
+            <li>Image and video feature extraction and pattern recognition in textiles and painting quality measurement
+            </li>
+            <li>MATLAB and Python programming for various image processing tasks</li>
+          </ul>
+          <div class="duration">Nov 2011 - Dec 2012 | Tehran, Iran</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills" class="section scrollspy">
+      <h3 class="page-title white-text teal">Skills</h3>
+      <div>
+        <p>
+          <ul>
+            <li><b>Programming Languages:</b> Python, C++, JavaScript, Matlab, Bash</li>
+            <li><b>Databases:</b> MySQL, PostgreSQL, MongoDB</li>
+
+          </ul>
+
+        </p>
+      </div>
+      <div>
+        <!-- Languages and Databases -->
+        <div class="card">
+          <div class="card-content">
+            <h4 class="brown-text light">Languages and Databases</h4>
+            <div class="row text-center">
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/python-logo-1-300x300.jpg" class="responsive-img" />Python
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/html5-300x300.jpg" class="responsive-img" />HTML5
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/css3-300x300.jpg" class="responsive-img" />CSS3
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/mysql-logo-1-300x300.jpg" class="responsive-img" />MySQL
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/postgresql-logo.png" class="responsive-img" />PostgreSQL
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/shell-logo-1-300x300.jpg" class="responsive-img" />Shell Scripting
+              </div>
+            </div>
+          </div>
+        </div>
+        <li><b>Libraries:</b> NumPy, Pandas, OpenCV, SciPy, scikit-learn, Matplotlib</li>
+        <li><b>Visualization Libraries:</b> Matplotlib, Seaborn, Plotly, Altair, Vega-Lite</li>
+        <div class="card">
+          <div class="card-content">
+            <h4 class="brown-text light">Libraries</h4>
+            <div class="row text-center">
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/numpy-logo-1-500x500.jpg" class="responsive-img" />NumPy
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/pandas-logo-2-500x500.jpg" class="responsive-img" />Pandas
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/opencv-logo-1-500x500.jpg" class="responsive-img" />OpenCV
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/sk-learn-logo-1-500x500.jpg" class="responsive-img" />scikit-learn
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/matplotlib-logo-1-500x500.jpg" class="responsive-img" />matplotlib
+              </div>
+            </div>
+          </div>
+        </div>
+        <li><b>Frameworks:</b> Flask, Django, Node.js, Bootstrap</li>
+        <li><b>Deep Learning Frameworks:</b> TensorFlow, PyTorch, Keras</li>
+        <!-- Frameworks -->
+        <div class="card">
+          <div class="card-content">
+            <h4 class="brown-text light">Frameworks</h4>
+            <div class="row text-center">
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/django-logo.webp" class="responsive-img" />Django
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/flask-logo.png" class="responsive-img" />Flask
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/tensorflow-logo-1.png" class="responsive-img" />TensorFlow
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/pytorch-logo.png" class="responsive-img" />PyTorch
+              </div>
+            </div>
+          </div>
+        </div>
+        <li><b>CI/CD Tools:</b> GitHub Actions, GitLab CI/CD, Jenkins, Docker</li>
+        <li><b>Tools & Technologies:</b> Git, Docker, AWS, WSL, Jupyter Notebook</li>
+        <!-- Other -->
+        <div class="card">
+          <div class="card-content">
+            <h4 class="brown-text light">Other</h4>
+            <div class="row text-center">
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/git.png" class="responsive-img" />Git
+              </div>
+              <div class="col s4 m2">
+                <img alt="" src="/assets/img/aws.png" class="responsive-img" />AWS
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section id="projects" class="section">
+      <h3 class="page-title white-text teal">Projects</h3>
+      <div>
+        <div class="card project-card">
+          <h5 class="project-title"> 1- Medical Image Visualization</h5>
+          <p>Advanced visualization techniques for medical imaging data analysis.</p>
+          <h5 class="project-title"> 2- Optimizing Camera Position for Minimal Occlusion and Maximum Interaction</h5>
+          <p>
+            This project focuses on determining the best camera placement to reduce visual obstructions while enhancing
+            interaction efficiency. Using computational techniques and analysis, we aim to develop an algorithm for
+            optimal camera positioning, which can be applied in gaming, virtual reality, and other interactive
+            environments.
+          </p>
+          <h5 class="project-title"> 3- AI‑Powered Lymph Node Detection in Mammography for Early Cancer Detection</h5>
+
+          <p>
+            This project utilizes AI and advanced image processing techniques to detect lymph nodes in mammography
+            images. The goal is to aid in early diagnosis and improve accuracy in breast cancer assessment. By
+            automating the detection process, we aim to reduce human error and provide better outcomes for patients.
+          </p>
+          <div class="skill-list">
+
+            <span class="skill-item">Python</span>
+            <span class="skill-item">OpenCV</span>
+            <span class="skill-item">TensorFlow</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- portfolio -->
+    <section id="portfolio" class="section scrollspy">
+      <h3 class="page-title white-text teal">Portfolio</h3>
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m3">
+            <a href="#data-visualization" class="portfolio-category card">
+              <img src="/assets/img/data-visualization-logo.png" alt="Data Visualization">
+              <p>Data Visualization</p>
+            </a>
+          </div>
+          <div class="col s12 m3">
+            <a href="#computer-vision" class="portfolio-category card">
+              <img src="/assets/img/computer-vision-logo.png" alt="Computer Vision">
+              <p>Computer Vision</p>
+            </a>
+          </div>
+          <div class="col s12 m3">
+            <a href="#machine-learning" class="portfolio-category card">
+              <img src="/assets/img/machine-learning-logo.png" alt="Machine Learning">
+              <p>Machine Learning</p>
+            </a>
+          </div>
+
+          <div class="col s12 m3">
+            <a href="#ai-research" class="portfolio-category card">
+              <img src="/assets/img/ai-research-logo.png" alt="AI Research">
+              <p>AI Research</p>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section scrollspy">
+      <h3 class="page-title white-text teal">Publications</h3>
+      <div>
+        <div class="row">
+          <!-- Publication 1 -->
+          <div>
+            <div class="card">
+              <div class="card-content">
+
+                <p>
+                  [Journal] 1- "Video Quality Measurement Based on 3-D Singular Value Decomposition" Journal of Visual
+                  Communication and Image Representation, Volume 27, February 2015, Pages 1‑6.
+                  Farah Torkamani‑Azar, Hassan Imani, Hossein Fathollahian.
+                </p>
+                <p>
+                  This paper introduces a novel method for measuring video quality using 3D Singular Value Decomposition
+                  (SVD). The study explores how SVD can be applied to enhance visual communication and image
+                  representation, offering insights into improving video quality analysis techniques.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Add more publications here as needed -->
+        </div>
+      </div>
+    </section>
+    <!-- Seventh Section: Education -->
+    <section id="education" class="section scrollspy">
+      <h3 class="page-title white-text teal">Education</h3>
+      <div>
+        <div class="row">
+          <!-- Education 1 -->
+          <div>
+            <div class="card">
+              <div class="card-content">
+                <p>
+                  <span class="card-title">
+                    <a href="https://www.uic.edu/" target="_blank">University of Illinois at Chicago</a>
+                  </span>
+                </p>
+                <p class="black-text">UIC, USA</p>
+                <p>
+                  <b>Degree:</b> PhD Student in Computer Science
+                  <br>
+                  <b>GPA:</b> 4.0/4.0
+                </p>
+                <p><b>Relevant Coursework:</b></p>
+                <ul>
+                  <li>Computer Vision/ Data Visualization/ Video Game Design</li>
+                  <li>Data Structure/ Computer Algorithms/ DataBase Systems</li>
+                  <li>Artificial Intelligence/ Machine Learning</li>
+                  <li>Advance Computer Vision(3D)/ Advance Stat NLP</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Education 2 -->
+          <div>
+            <div class="card">
+              <div class="card-content">
+                <p>
+                  <span class="card-title">
+                    <a href="https://www.sbu.ac.ir/" target="_blank">University of Shahid Beheshti</a>
+                  </span>
+                </p>
+                <p class="black-text">Tehran, Iran</p>
+                <p>
+                  <b>Degree:</b> M.S. Student in Telecommunication Engineering
+                  <br>
+                  <b>GPA:</b> 3.8/4.0
+                </p>
+                <p><b>Relevant Coursework:</b></p>
+                <ul>
+                  <li>Image Processing</li>
+                  <li>Signal Processing</li>
+                  <li>Source and Channel Coding</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Eight Section: Contact -->
+    <section id="contact" class="section scrollspy full-height">
+      <h3 class="page-title white-text teal">Contact</h3>
+      <div>
+        <p>
+          <a aria-label="Call Hossein" data-position="top" data-tooltip="Call Hossein"
+            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-phone"></i><a
+              aria-label="Call Hossein">+1 312.996.3002</a></a>
+        </p>
+        <p>
+          <a aria-label="Email Hossein" href="mailto:hossein.fathollahian@gmail.com" target="_blank" data-position="top"
+            data-tooltip="Email Hossein" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+              class="fa fa-envelope"></i><a aria-label="Email Hossein" href="mailto:hossein.fathollahian@gmail.com"
+              class="hoverline">Hossein.Fathollahian@gmail.com</a></a>
+        </p>
+        <p>
+          <a aria-label="View Hossein on GitHub" href="http://github.com/hosseinfatho" target="_blank"
+            data-position="top" data-tooltip="View Hossein on GitHub"
+            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i><a
+              aria-label="Hossein on Github" href="http://github.com/hosseinfatho" class="hoverline"
+              target="_blank">github.com/hosseinfatho</a></a>
+        </p>
+        <p>
+          <a aria-label="View Hossein on LinkedIn" href="https://www.linkedin.com/in/hossein-fathollahian/"
+            target="_blank" data-position="top" data-tooltip="View Hossein on LinkedIn"
+            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+              class="fa fa-linkedin"></i><a aria-label="Hossein on LinkedIn"
+              href="https://www.linkedin.com/in/hossein-fathollahian/" class="hoverline"
+              target="_blank">linkedin.com/in/hossein-fathollahian/</a></a>
+        </p>
+      </div>
+    </section>
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PGZH8HT');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-126939217-2');
+    </script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+    <script>
+      var typed = new Typed('.typing', {
+        strings: ["Machine Learning & AI", "Data Visualization", "Computer Vision & Image Processing"],
+        loop: true,
+        typeSpeed: 80,
+        backSpeed: 40
+      });
+      document.querySelectorAll('.portfolio-category').forEach(item => {
+        item.addEventListener('click', function(event) {
+          event.preventDefault();
+          const category = this.getAttribute('href').split('=')[1];
+          window.location.href = `portfolio.html?category=${category}`;
+        });
+      });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".scrollspy").scrollSpy();
+        $(".button-collapse").sideNav({
+          menuWidth: 190,
+          edge: "left",
+          closeOnClick: true
+        });
+      });
+    </script>
+  </main>
+</body>
+
+</html>
+=======
           <div class="card-content">
            
             <p>
@@ -909,11 +1132,10 @@ which provides professional development, interesting experiences and personal gr
             </p>
             <p><b>Relevant Coursework:</b></p>
             <ul>
-              <li>Computer Vision</li>
-              <li>Data Visualization</li>
-              <li>Video Game Design</li>
-              <li>Computer Algorithms</li>
-              <li>Data Structure</li>
+              <li>Computer Vision/Data Visualization/Video Game Design</li>
+              <li>Data Structure/Computer Algorithms</li>
+              <li>Artificial Intelligence-Machine Learning</li>
+              <li>Advance Computer Vision(3D)- Advance Stat NLP</li>
             </ul>
           </div>
         </div>
@@ -1021,8 +1243,7 @@ class="hoverline" target="_blank">linkedin.com/in/hossein-fathollahian/</a></a>
          });
      });
  </script>
- 
 </main>
 </body>
-
 </html>
+>>>>>>> origin/main
