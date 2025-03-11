@@ -10,70 +10,118 @@
         body {
             background-color: #cae6ca;
         }
+
         .portfolio-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px;
+            gap: 2px;
+            padding: 2px;
         }
+
         .portfolio-item {
             border: 1px solid #cae6ca;
             padding: 15px;
             text-align: center;
-            border-radius: 10px;
+            border-radius: 5px;
             background-color: #cae6ca;
         }
+
         .portfolio-item img {
-            width: 200%;
-            border-radius: 10px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 1px;
         }
+
         .portfolio-item a {
             display: block;
-            margin-top: 200px;
+            margin-top: 2px;
             text-decoration: none;
             color: #001479;
             font-weight: bold;
         }
+
         .main-container {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 1px;
+            justify-content: center;
+            margin-bottom: 5px;
         }
+
         section {
-    width: 90%;
-    margin: 0 auto; /* This centers the section horizontally */
-}
+            width: 90%;
+            margin: 0 auto; /* This centers the section horizontally */
+        }
+
         .main-section {
             flex: 1;
             text-align: center;
             background-color: #cae6ca;
-            padding: 15px;
-            border-radius: 10px;
+            padding: 1px;
+            border-radius: 5px;
         }
+
         .main-section img {
-            width: 200%;
-            max-width: 200px;
-            border-radius: 10px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 5px;
         }
+
         .subsections {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 2px;
             flex: 3;
         }
+
         .portfolio-item {
             text-align: center;
             border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 10px;
+            padding: 1px;
+            border-radius: 1px;
             background-color: #cae6ca;
         }
+
         .portfolio-item img {
-            width: 90%;
-            height: 90%;
-            max-width: 250px;
-            max-height: 250px;
-            border-radius: 10px;
+            width: 10%;
+            height: auto;
+            max-width: 500px;
+            max-height: 500px;
+            border-radius: 1px;
+        }
+
+        .video-container {
+            text-align: center; /* Center the video */
+        }
+
+        .github-link-container {
+            text-align: center; /* Center the link */
+            margin-top: 1px; /* Adjusted for consistent spacing */
+        }
+
+        .github-link {
+            display: inline-block;
+            font-size: 14px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Improved responsiveness for smaller screens */
+        @media screen and (max-width:1200px) {
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .subsections {
+                grid-template-columns: 1fr; /* Stack subsections on smaller screens */
+            }
         }
     </style>
 </head>
@@ -87,236 +135,140 @@
         <h4>Computer Vision</h4>
         <div class="row">
             <!-- Main Section -->
-            <div class="col s12 m6 l3 main-section">
+            <div  class="main-section">
                 <img src="/assets/img/computer-vision-logo.png" alt="Computer Vision" class="responsive-img">
                 <p>Developing algorithms for Image Analysis, 3D Reconstruction.</p>
             </div>
+        </div>
+    </section>
 
-            <!-- Subsections -->
-            <div class="col s12 m6 l9 subsections">
+    <!-- Machine Learning Section -->
+    <section id="machine-learning" class="section">
+        <h4>Machine Learning</h4>
+        <div class="main-container">
+            <!-- Main Section -->
+            <div class="main-section">
+                <img src="/assets/img/machine-learning-logo.png" alt="Machine Learning" class="responsive-img">
+                <p>Supervised, Unsupervised, Reinforcement, Deep Learning</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualization Section -->
+    <section id="data-visualization" class="section">
+        <h4>Data Visualization</h4>
+        <div class="main-container">
+            <!-- Main Section -->
+            <div class="col s12 m6 l3 main-section">
+                <img src="/assets/img/data-visualization-logo.png" alt="Data Visualization">
+                <p>Interactive, geospatial, Dynamic visualizations</p>
+            </div>
+
+            <!-- Subsections (Displayed in Front) -->
+            <div class="subsections">
                 <div class="portfolio-item">
-                    <p>Object Detection</p>
-                    <img src="/assets/img/object-detection.png" alt="Object Detection" class="responsive-img">
-                    <a href="#" target="_blank">GitHub Link</a>
-                </div>
-                <div class="portfolio-item">
-                    <p>Image Segmentation</p>
-                    <img src="/assets/img/image-segmentation.png" alt="Image Segmentation" class="responsive-img">
-                    <a href="#" target="_blank">GitHub Link</a>
-                </div>
-                <div class="portfolio-item">
-                    <p>Face Recognition</p>
-                    <img src="/assets/img/face-recognition.png" alt="Face Recognition" class="responsive-img">
-                    <a href="#" target="_blank">GitHub Link</a>
-                </div>
-                <div class="portfolio-item">
-                    <p>Scene Understanding</p>
-                    <img src="/assets/img/scene-understanding.png" alt="Scene Understanding" class="responsive-img">
-                    <a href="#" target="_blank">GitHub Link</a>
-                </div>
-                <div class="portfolio-item">
-                    <p>Medical Imaging</p>
-                    <img src="/assets/img/medical-imaging.png" alt="Medical Imaging" class="responsive-img">
-                    <a href="#" target="_blank">GitHub Link</a>
+                    <p>Interactive Dashboards</p>
+                    <div class="video-container" >
+                        <video controls poster="/assets/img/video-thumbnail.png" width="400" height="180">
+                            <source src="/assets/video/Recordingvis.mp4" type="video/mp4">
+                        </video>
+                        <div class="github-link-container">
+                            <a class="github-link" href="https://github.com/Hosseinfatho/Brain" target="_blank">GitHub Link</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-        <!-- Machine Learning Section -->
-<section id="machine-learning" class="section">
-    <h4>Machine Learning</h4>
-    <div class="main-container">
-        <!-- Main Section -->
-        <div class="main-section">
-            <img src="/assets/img/machine-learning-logo.png" alt="Machine Learning">
-            <p>Supervised, Unsupervised,Reinforcement, Deep Learning</p>
-        </div>
-
-        <!-- Subsections (Displayed in Front) -->
-        <div class="subsections">
-            <div class="portfolio-item">
-                <p>Supervised Learning</p>
-                <img src="/assets/img/supervised-learning.png" alt="Supervised Learning">
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>Unsupervised Learning</p>
-                <img src="/assets/img/unsupervised-learning.png" alt="Unsupervised Learning">
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>Reinforcement Learning</p>
-                <img src="/assets/img/reinforcement-learning.png" alt="Reinforcement Learning">
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>Deep Learning</p>
-                <img src="/assets/img/deep-learning.png" alt="Deep Learning">
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>Auto ML</p>
-                <img src="/assets/img/automl.png" alt="AutoML">
-                <a href="#" target="_blank">GitHub Link</a>
+    <!-- AI Projects Section -->
+    <section id="ai-projects" class="section">
+        <h4>AI Projects</h4>
+        <div class="main-container">
+            <!-- Main Section -->
+            <div class="main-section">
+                <img src="/assets/img/ai-research-logo.png" alt="AI Research">
+                <p>Main Section Description</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Data Visualization Section -->
-<section id="data-visualization" class="section">
-    <h4>Data Visualization</h4>
-    <div class="main-container">
-        <!-- Main Section -->
-        <div class="main-section">
-            <img src="/assets/img/data-visualization-logo.png" alt="Data Visualization">
-            <p> Interactive, geospatial, Dynamic visualizations</p>
-        </div>
+    <!-- Unity Projects Section -->
+    <section id="unity-projects" class="section">
+        <h4>Unity Projects</h4>
+        <div class="main-container">
+            <!-- Main Section -->
+            <div class="main-section">
+                <img src="/assets/img/unity-logo.png" alt="Unity Projects">
+                <p>Designing immersive, interactive multiplayer experiences in augmented and virtual reality</p>
+            </div>
 
-        <!-- Subsections (Displayed in Front) -->
-        <div class="subsections">
-            <div class="portfolio-item">
-                <p>Interactive Dashboards</p>
-                <div >
-                    <video controls poster="/assets/img/video-thumbnail.png" width="200" height="200">
-                        <source src="/assets/video/Recordingvis.mp4" type="video/mp4">
-                    </video>
+            <!-- Subsections (Displayed in Front) -->
+            <div class="subsections">
+                <div class="portfolio-item">
+                    <p>Game Development</p>
+                    <div class="video-container">
+                        <video controls poster="/assets/img/video-thumbnail.png" width="400" height="180">
+                            <source src="/assets/video/gamedev.mpf.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="github-link-container">
+                            <a class="github-link" href="https://github.com/Hosseinfatho/Brain" target="_blank">GitHub Link</a>
+                        </div>
+                    </div>
                 </div>
-                <a href="#" target="_blank">GitHub Link:https://github.com/Hosseinfatho/Brain</a>
-            </div>
-            <div class="portfolio-item">
-                <p>Geospatial Visualization</p>
-                <img src="/assets/img/geospatial-visualization.png" alt="Geospatial Visualization">
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>Time Series Analysis</p>
-                <img src="/assets/img/time-series.png" alt="Time Series Analysis">
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>Big Data Visualization</p>
-                <img src="/assets/img/big-data-visualization.png" alt="Big Data Visualization">
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>3D Data Visualization</p>
-                <img src="/assets/img/3d-visualization.png" alt="3D Data Visualization">
-                <a href="#" target="_blank">GitHub Link</a>
+                <div class="portfolio-item">
+                    <p>VR & AR Applications</p>
+                    <div class="video-container">
+                        <video controls poster="/assets/img/video-thumbnail.png" width="400" height="180">
+                            <source src="/assets/video/ARVR.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="github-link-container">
+                            <a class="github-link" href="https://github.com/Hosseinfatho/Brain" target="_blank">GitHub Link</a>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="portfolio-item">
+                    <p>Physics Simulations</p>
+                    <div class="video-container">
+                        <video controls poster="/assets/img/video-thumbnail.png" width="400" height="180">
+                            <source src="/assets/video/physics-simulation.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="github-link-container">
+                            <a class="github-link" href="https://github.com/Hosseinfatho/Brain" target="_blank">GitHub Link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <p>AI in Games</p>
+                    <div class="video-container">
+                        <video controls poster="/assets/img/video-thumbnail.png" width="400" height="180">
+                            <source src="/assets/video/AI.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="github-link-container">
+                            <a class="github-link" href="https://github.com/Hosseinfatho/Brain" target="_blank">GitHub Link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <p>Multiplayer Networking</p>
+                    <div class="video-container">
+                        <video controls poster="/assets/img/video-thumbnail.png" width="400" height="180">
+                            <source src="/assets/video/multiplayer.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="github-link-container">
+                            <a class="github-link" href="https://github.com/Hosseinfatho/Brain" target="_blank">GitHub Link</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- AI Projects Section -->
-<section id="ai-projects" class="section">
-    <h4>AI Projects</h4>
-    <div class="main-container">
-        <!-- Main Section -->
-        <div class="main-section">
-            <img src="/assets/img/ai-research-logo.png" alt="AI Research">
-            <p>Main Section Description</p>
-        </div>
-
-        <!-- Subsections (Displayed in Front) -->
-        <div class="subsections">
-            <div class="portfolio-item">
-                <p>Natural Language Processing</p>
-                <img src="/assets/img/nlp.png" alt="Natural Language Processing">
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>AI for Healthcare</p>
-                <img src="/assets/img/ai-healthcare.png" alt="AI for Healthcare">
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>Autonomous Systems</p>
-                <img src="/assets/img/autonomous-systems.png" alt="Autonomous Systems">
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>AI Ethics & Bias</p>
-                <img src="/assets/img/ai-ethics.png" alt="AI Ethics & Bias">
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>Generative AI</h5>
-                <img src="/assets/img/generative-ai.png" alt="Generative AI">
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Unity Projects Section -->
-<section id="unity-projects" class="section">
-    <h4>Unity Projects</h4>
-    <div class="main-container">
-        <!-- Main Section -->
-        <div class="main-section">
-            <img src="/assets/img/unity-logo.png" alt="Unity Projects">
-            <p>Designing immersive, interactive multiplayer experiences in augmented and virtual reality</p>
-        </div>
-
-        <!-- Subsections (Displayed in Front) -->
-        <div class="subsections">
-            <div class="portfolio-item">
-                <p>Game Development</p>
-                <div >
-                    <video controls poster="/assets/img/video-thumbnail.png" width="200" height="200">
-                        <source src="/assets/video/gamedev.mpf.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>VR & AR Applications</p>
-                <div >
-                    <video controls poster="/assets/img/video-thumbnail.png" width="200" height="200">
-                        <source src="/assets/video/ARVR.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>Physics Simulations</p>
-                <!-- Video container using local video file -->
-                <div >
-                    <video controls poster="/assets/img/video-thumbnail.png" width="200" height="200">
-                        <source src="/assets/video/physics-simulation.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>AI in Games</p>
-                <div >
-                    <video controls poster="/assets/img/video-thumbnail.png" width="200" height="200">
-                        <source src="/assets/video/AI.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-            <div class="portfolio-item">
-                <p>Multiplayer Networking</p>
-                <div >
-                    <video controls poster="/assets/img/video-thumbnail2.png" width="200" height="200">
-                        <source src="/assets/video/multiplayer.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <a href="#" target="_blank">GitHub Link</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-</div>
+    </section>
 </body>
 </html>
