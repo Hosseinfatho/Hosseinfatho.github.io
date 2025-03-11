@@ -3,6 +3,7 @@
 
 <head>
   <style>
+    
     /* Experience section */
     #experience {
       padding: 40px 0;
@@ -238,6 +239,7 @@
       z-index: 1;
     }
 
+
     #intro .content {
       position: relative;
       z-index: 2;
@@ -463,6 +465,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
   <!-- Font Awesome Icon - CSS-->
@@ -1051,31 +1054,10 @@
     </script>
     <!-- End Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-126939217-2');
-    </script>
-    <script src="assets/vendor/typed.js/typed.min.js"></script>
-    <script>
-      var typed = new Typed('.typing', {
-        strings: ["Machine Learning & AI", "Data Visualization", "Computer Vision & Image Processing"],
-        loop: true,
-        typeSpeed: 80,
-        backSpeed: 40
-      });
-      document.querySelectorAll('.portfolio-category').forEach(item => {
-        item.addEventListener('click', function(event) {
-          event.preventDefault();
-          const category = this.getAttribute('href').split('=')[1];
-          window.location.href = `portfolio.html?category=${category}`;
-        });
-      });
-    </script>
+
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
@@ -1215,21 +1197,30 @@ class="hoverline" target="_blank">linkedin.com/in/hossein-fathollahian/</a></a>
   </script>
  <script src="assets/vendor/typed.js/typed.min.js"></script>
  <script>
-     var typed = new Typed('.typing', {
-         strings: ["Machine Learning & AI", "Data Visualization", "Computer Vision & Image Processing"],
-         loop: true,
-         typeSpeed: 80,
-         backSpeed: 40
-     });
+  document.addEventListener("DOMContentLoaded", function () {
+    var typingElement = document.querySelector('.typing');
+    if (typingElement) {
+      var typed = new Typed('.typing', {
+  strings: ["Machine Learning", "Data Visualization", "Computer Vision"," Image Processing"],
+  loop: true,
+  typeSpeed: 100,  // Slower typing (increase value)
+  backSpeed: 50,   // Even slower deleting (increase value)
+  backDelay: 1000, // Pause before deleting
+  startDelay: 500  // Delay before typing starts
+});
 
-     document.querySelectorAll('.portfolio-category').forEach(item => {
-         item.addEventListener('click', function(event) {
-             event.preventDefault();
-             const category = this.getAttribute('href').split('=')[1];
-             window.location.href = `portfolio.html?category=${category}`;
-         });
-     });
- </script>
+    }
+
+    document.querySelectorAll('.portfolio-category').forEach(item => {
+      item.addEventListener('click', function(event) {
+        event.preventDefault();
+        const category = this.getAttribute('href').split('=')[1];
+        window.location.href = `portfolio.html?category=${category}`;
+      });
+    });
+  });
+</script>
+
  
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
