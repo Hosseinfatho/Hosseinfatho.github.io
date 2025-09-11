@@ -1,7 +1,7 @@
 .profile-pic {
   position: relative;
-  max-width:130px;
-  max-height:130px;
+  max-width:143px;
+  max-height:143px;
   width: auto;
   height: auto;
   overflow: hidden;
@@ -125,7 +125,7 @@
 
 body {
   color: #333;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* body {
@@ -196,12 +196,12 @@ nav i {
 
 /* main {
   background: url(../../assets/img/bg.png) repeat;
-  padding-left: 190px;
+  padding-left: 209px;
 } */
 
 main {
   background: url(../../assets/img/bg.png) repeat;
-  padding-left: 190px;
+  padding-left: 209px;
 }
 
 dl {
@@ -220,7 +220,7 @@ dt {
 }
 
 ul.side-nav {
-  width: 190px;
+  width: 209px;
 }
 
 ul.side-nav li {
@@ -296,20 +296,21 @@ li.logo span {
 
 h3 {
   font-weight: 200;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   margin-top: 0;
-  padding: 30px 40px;
+  padding: 15px 20px;
   text-transform: uppercase;
 }
 
 .section {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   padding-top: 0;
   position: relative;
 }
 
 .full-height {
-  height: 100vh;
+  height: 90vh;
+  min-height: 700px;
 }
 
 /* Original */
@@ -371,7 +372,7 @@ h3 {
 }
 
 .card {
-  margin-bottom: 60px;
+  margin-bottom: 25px;
 }
 
 .card .role {
@@ -393,7 +394,7 @@ h3 {
 }
 
 .card .card-content {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 
 .card .card-content p {
@@ -401,15 +402,15 @@ h3 {
 }
 
 .card h5 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: -0.5rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .card h6 {
   font-weight: 300;
   letter-spacing: 1px;
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-transform: uppercase;
 }
 
@@ -436,9 +437,10 @@ h3 {
 }
 
 .card ul li {
-  line-height: 200%;
+  line-height: 150%;
   list-style-type: disc;
   margin-left: 24px;
+  margin-bottom: 8px;
 }
 
 .card ul li li {
@@ -488,11 +490,17 @@ a.hoverline:hover {
 
 #skills .col img.responsive-img {
   margin: 0 auto;
-  max-height: 100px;
-  padding-bottom: 10px;
+  max-height: 60px;
+  padding-bottom: 5px;
   text-align: center;
   vertical-align: middle;
   display: table-cell;
+}
+
+#skills .col {
+  padding: 5px !important;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
 }
 
 .card.large .card-content p {
@@ -548,7 +556,7 @@ small {
 
 /* main .teal-text */
 
-.teal-text {
+.steelblue-text {
   color: #4682B4 !important;
 }
 
@@ -558,19 +566,23 @@ small {
 
 /* .teal */
 
-.teal {
+.steelblue {
   background-color: #4682B4 !important;
+}
+
+strong {
+  color: #4682B4 !important;
 }
 
 /* .teal {
   background-color: #00695c !important;
 } */
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   #experience .container {
     width: 860px;
   }
-}
+} */
 
 @media (max-width: 1360px) {
   .card ul li {
@@ -602,7 +614,7 @@ small {
     position: absolute;
   }
   nav a.button-collapse, nav a.button-collapse i {
-    color: #009688;
+    color: #4682B4;
     height: 56px;
     line-height: 56px;
   }
@@ -644,7 +656,7 @@ small {
     top: 64px;
   }
   section#intro {
-    margin-bottom: -64px;
+    margin-bottom: -30px;
   }
   .card .role {
     position: relative;
