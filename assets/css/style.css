@@ -291,7 +291,7 @@ li.logo span {
 }
 
 .container {
-  width: 95%;
+  width: 90%;
 }
 
 h3 {
@@ -300,6 +300,10 @@ h3 {
   margin-top: 0;
   padding: 15px 20px;
   text-transform: uppercase;
+}
+
+.page-title {
+  text-align: left !important;
 }
 
 .section {
@@ -331,6 +335,7 @@ h3 {
   left: 0;
   position: absolute;
   top: 0;
+  width: 100%;
 }
 
 /* #intro.section .container *:not(span) {
@@ -574,6 +579,10 @@ strong {
   color: #4682B4 !important;
 }
 
+#intro .container {
+  width: 120%;
+}
+
 /* .teal {
   background-color: #00695c !important;
 } */
@@ -657,6 +666,9 @@ strong {
   }
   section#intro {
     margin-bottom: -30px;
+  }
+  #intro.section .container {
+    width: 120%;
   }
   .card .role {
     position: relative;
