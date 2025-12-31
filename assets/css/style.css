@@ -296,7 +296,7 @@ li.logo span {
 
 h3 {
   font-weight: 200;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   margin-top: 0;
   padding: 15px 20px;
   text-transform: uppercase;
@@ -307,7 +307,7 @@ h3 {
 }
 
 .section {
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   padding-top: 0;
   position: relative;
 }

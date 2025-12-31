@@ -6,14 +6,14 @@
     
     /* Experience section */
     #experience {
-      padding: 40px 0;
+      padding: 20px 0;
       background: linear-gradient(135deg, #f4f4f4 0%, #e0e0e0 100%);
     }
 
     #experience .page-title {
       text-align: center; display: flex; justify-content: center; align-items: center; gap: 15px;
       font-size: 2.5rem;
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
 
     #experience .container {
@@ -450,6 +450,89 @@
       color: #4682B4;
       font-weight: bold;
     }
+
+    /* Tab System Styles */
+    .tabs-container {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      background: white;
+      padding: 10px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 0;
+      padding: 0 15px;
+      border-bottom: 2px solid #e0e0e0;
+      justify-content: flex-start;
+    }
+
+    .tab-button {
+      padding: 12px 20px;
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      color: #666;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      margin-bottom: -2px;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .tab-button:hover {
+      color: #4682B4;
+      background: rgba(70, 130, 180, 0.05);
+    }
+
+    .tab-button.active {
+      color: #4682B4;
+      border-bottom: 3px solid #4682B4;
+      font-weight: 600;
+      background: rgba(70, 130, 180, 0.05);
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px 0;
+      min-height: 400px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .tabs {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 3px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .tab-button {
+        white-space: nowrap;
+        padding: 10px 15px;
+        font-size: 0.85rem;
+      }
+    }
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -627,9 +710,24 @@
 
   <!-- Main Content-->
   <main>
-  
-    <!-- First Section: Heading lines and image -->
-    <section id="intro" class="section scrollspy full-height" style="margin-bottom: 20px;">
+    <!-- Tab Navigation -->
+    <div class="tabs-container">
+      <div class="tabs">
+        <button class="tab-button active" data-tab="intro">About</button>
+        <button class="tab-button" data-tab="experience">Experience</button>
+        <button class="tab-button" data-tab="skills">Skills</button>
+        <button class="tab-button" data-tab="projects">Projects</button>
+        <button class="tab-button" data-tab="portfolio">Portfolio</button>
+        <button class="tab-button" data-tab="publications">Publications</button>
+        <button class="tab-button" data-tab="education">Education</button>
+        <button class="tab-button" data-tab="contact">Contact</button>
+      </div>
+    </div>
+
+    <!-- Tab Contents -->
+    <!-- Intro Tab -->
+    <div id="intro-tab" class="tab-content active">
+    <section id="intro" class="section full-height" style="margin-bottom: 0;">
       <div class="overlay"></div>
       <div class="container">
         <div class="col-md-9">
@@ -664,16 +762,15 @@
               </div>
 
             </div>
-            <div class='buttons'>
-              <a href="#experience" class="readme">View Experience</a>
-              <a href="#contact" class="contactme">Contact Me</a>
-            </div>
           </div>
         </div>
       </div>
     </section>
+    </div>
 
-    <section id="experience" class="section scrollspy">
+    <!-- Experience Tab -->
+    <div id="experience-tab" class="tab-content">
+    <section id="experience" class="section">
       <h3 class="page-title white-text steelblue" style="text-align: left;">Experience</h3>
       <div class="container">
         <div class="card">
@@ -724,8 +821,11 @@
 
       </div>
     </section>
+    </div>
 
-    <section id="skills" class="section scrollspy">
+    <!-- Skills Tab -->
+    <div id="skills-tab" class="tab-content">
+    <section id="skills" class="section">
       <h3 class="page-title white-text steelblue" style="text-align: left;">Skills</h3>
       <div class="container">
       </div>
@@ -855,6 +955,10 @@
 
       </div>
     </section>
+    </div>
+
+    <!-- Projects Tab -->
+    <div id="projects-tab" class="tab-content">
     <section id="projects" class="section">
       <h3 class="page-title white-text steelblue" style="text-align: left;">Projects</h3>
       <div class="container">
@@ -884,8 +988,11 @@
         </div>
       </div>
     </section>
-    <!-- portfolio -->
-    <section id="portfolio" class="section scrollspy">
+    </div>
+
+    <!-- Portfolio Tab -->
+    <div id="portfolio-tab" class="tab-content">
+    <section id="portfolio" class="section">
       <h3 class="page-title white-text steelblue" style="text-align: left;">Portfolio</h3>
       <div class="container">
         <div class="row">
@@ -918,8 +1025,11 @@
         </div>
       </div>
     </section>
+    </div>
 
-    <section id="publications" class="section scrollspy">
+    <!-- Publications Tab -->
+    <div id="publications-tab" class="tab-content">
+    <section id="publications" class="section">
       <h3 class="page-title white-text steelblue" style="text-align: left;">Publications</h3>
       <div class="container">
         <div class="row">
@@ -945,8 +1055,11 @@
         </div>
       </div>
     </section>
-    <!-- Seventh Section: Education -->
-    <section id="education" class="section scrollspy">
+    </div>
+
+    <!-- Education Tab -->
+    <div id="education-tab" class="tab-content">
+    <section id="education" class="section">
       <h3 class="page-title white-text steelblue" style="text-align: left;">Education</h3>
       <div class="container">
         <div class="row">
@@ -1002,8 +1115,11 @@
         </div>
       </div>
     </section>
-    <!-- Eight Section: Contact -->
-    <section id="contact" class="section scrollspy full-height">
+    </div>
+
+    <!-- Contact Tab -->
+    <div id="contact-tab" class="tab-content">
+    <section id="contact" class="section full-height">
       <h3 class="page-title white-text steelblue" style="text-align: left;">Contact</h3>
       <div class="container">
         <p>
@@ -1034,6 +1150,8 @@
         </p>
       </div>
     </section>
+    </div>
+
     <script>
       (function(w, d, s, l, i) {
         w[l] = w[l] || [];
@@ -1061,12 +1179,54 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
     <script>
       $(document).ready(function() {
-        $(".scrollspy").scrollSpy();
         $(".button-collapse").sideNav({
           menuWidth: 209,
           edge: "left",
           closeOnClick: true
         });
+
+        // Tab switching functionality
+        $('.tab-button').on('click', function() {
+          var targetTab = $(this).data('tab');
+          
+          // Remove active class from all buttons and tabs
+          $('.tab-button').removeClass('active');
+          $('.tab-content').removeClass('active');
+          
+          // Add active class to clicked button and corresponding tab
+          $(this).addClass('active');
+          $('#' + targetTab + '-tab').addClass('active');
+          
+          // Update URL hash without scrolling
+          if (history.pushState) {
+            history.pushState(null, null, '#' + targetTab);
+          }
+        });
+
+        // Handle navigation sidebar clicks
+        $('nav a[href^="#"]').on('click', function(e) {
+          e.preventDefault();
+          var target = $(this).attr('href').substring(1);
+          
+          // Remove active class from all buttons and tabs
+          $('.tab-button').removeClass('active');
+          $('.tab-content').removeClass('active');
+          
+          // Add active class to corresponding button and tab
+          $('.tab-button[data-tab="' + target + '"]').addClass('active');
+          $('#' + target + '-tab').addClass('active');
+        });
+
+        // Handle initial hash in URL
+        if (window.location.hash) {
+          var hash = window.location.hash.substring(1);
+          if ($('#' + hash + '-tab').length) {
+            $('.tab-button').removeClass('active');
+            $('.tab-content').removeClass('active');
+            $('.tab-button[data-tab="' + hash + '"]').addClass('active');
+            $('#' + hash + '-tab').addClass('active');
+          }
+        }
       });
     </script>
   </main>
