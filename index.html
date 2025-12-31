@@ -10,11 +10,6 @@
       background: linear-gradient(135deg, #f4f4f4 0%, #e0e0e0 100%);
     }
 
-    #experience .page-title {
-      text-align: center; display: flex; justify-content: center; align-items: center; gap: 15px;
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
 
     #experience .container {
       width: 100%;
@@ -34,7 +29,7 @@
       margin-bottom: 15px;
       padding: 15px;
       transition: all 0.4s ease;
-      border-left: 5px solid #4682B4;
+      border-left: 5px solid #1e3a8a;
     }
 
     .card:hover {
@@ -43,8 +38,8 @@
     }
 
     .card h5 {
-      font-size: 1.4rem;
-      color: #4682B4;
+      font-size: 1.68rem;
+      color: #1e3a8a;
       margin-bottom: 10px;
       position: relative;
       padding-bottom: 8px;
@@ -57,7 +52,7 @@
       left: 0;
       width: 50px;
       height: 3px;
-      background: #4682B4;
+      background: #1e3a8a;
       transition: width 0.3s ease;
     }
 
@@ -66,7 +61,7 @@
     }
 
     .card p {
-      font-size: 1rem;
+      font-size: 1.44rem;
       color: #616161;
       /* Dark gray color for the company name */
       margin-bottom: 10px;
@@ -88,7 +83,7 @@
       content: '→';
       position: absolute;
       left: 0;
-      color: #4682B4;
+      color: #1e3a8a;
       font-weight: bold;
       transition: transform 0.3s ease;
     }
@@ -100,16 +95,16 @@
     .duration {
       display: inline-block;
       padding: 8px 15px;
-      background: rgba(70, 130, 180, 0.1);
+      background: rgba(30, 58, 138, 0.1);
       border-radius: 20px;
-      font-size: 0.9rem;
-      color: #4682B4;
+      font-size: 1.08rem;
+      color: #1e3a8a;
       margin-top: 15px;
       transition: all 0.3s ease;
     }
 
     .card:hover .duration {
-      background: rgba(70, 130, 180, 0.2);
+      background: rgba(30, 58, 138, 0.2);
       transform: scale(1.05);
     }
 
@@ -118,16 +113,16 @@
       display: inline-block;
       padding: 6px 12px;
       margin: 5px;
-      background: #4682B4;
+      background: #1e3a8a;
       color: white;
       border-radius: 15px;
-      font-size: 0.9rem;
+      font-size: 1.08rem;
       transition: all 0.3s ease;
     }
 
     .skill-item:hover {
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(70, 130, 180, 0.3);
+      box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
     }
 
     /* Project section improvements */
@@ -135,11 +130,11 @@
       border-radius: 15px;
       overflow: hidden;
       border: none;
-      border-left: 5px solid #4682B4;
+      border-left: 5px solid #1e3a8a;
     }
 
     .project-title {
-      color: #4682B4;
+      color: #1e3a8a;
       font-weight: 600;
       margin-bottom: 15px;
       position: relative;
@@ -152,7 +147,7 @@
       left: 0;
       width: 40px;
       height: 3px;
-      background: #4682B4;
+      background: #1e3a8a;
       transition: width 0.3s ease;
     }
 
@@ -195,23 +190,18 @@
     }
 
     @media (max-width: 768px) {
-      #experience .page-title {
-        font-size: 2rem;
-        /* Adjust font size for smaller screens */
-      }
-
       .card {
         padding: 15px;
         /* Less padding for smaller screens */
       }
 
       .card h5 {
-        font-size: 1.3rem;
+        font-size: 1.56rem;
         /* Smaller title on mobile */
       }
 
       .card ul li {
-        font-size: 0.9rem;
+        font-size: 1.08rem;
         /* Adjust font size for better mobile readability */
       }
 
@@ -246,38 +236,43 @@
     }
 
     #intro h2 {
-      font-size: 3rem;
+      font-size: 3.6rem;
       font-weight: 700;
-      margin-bottom: 1rem;
-      color: #4682B4;
+      margin-bottom: 1.5rem;
+      color: #1e3a8a;
       animation: fadeInDown 1s ease-out;
+      text-align: left;
     }
 
     #intro h2 span {
       position: relative;
       display: inline-block;
       animation: slideInLeft 1.2s ease-out;
-      color: #073319;
-
-    }
-
-    #intro h5 {
-      font-size: 1.6rem;
-      line-height: 1.5;
-      margin-bottom: 1.5rem;
-      animation: fadeIn 1.5s ease-out;
+      color: #1e3a8a;
     }
 
     #intro p {
-      font-size: 1.2rem;
+      font-size: 1.32rem;
       line-height: 1.6;
-      color: #424242;
+      color: #000;
       margin-bottom: 1.5rem;
       animation: fadeInUp 1.8s ease-out;
+      text-align: left;
+    }
+
+    #intro a {
+      color: #1e3a8a;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    #intro a:hover {
+      color: #1e3a8a;
+      text-decoration: underline;
     }
 
     #intro strong {
-      color: #006d2c;
+      color: #000;
       font-weight: 600;
       position: relative;
     }
@@ -289,7 +284,7 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background: #4682B4;
+      background: #1e3a8a;
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }
@@ -306,19 +301,19 @@
     .icon-btn {
       padding: 12px;
       border-radius: 50%;
-      border: 2px solid #4682B4;
+      border: 2px solid #1e3a8a;
       background: transparent;
-      color: #4682B4;
-      font-size: 1.5rem;
+      color: #1e3a8a;
+      font-size: 1.8rem;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .icon-btn:hover {
-      background: #4682B4;
+      background: #1e3a8a;
       color: white;
       transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(70, 130, 180, 0.3);
+      box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
     }
 
     .buttons {
@@ -331,28 +326,28 @@
       padding: 12px 30px;
       margin: 0 15px;
       border-radius: 25px;
-      font-size: 1.1rem;
+      font-size: 1.32rem;
       font-weight: 500;
       text-decoration: none;
       transition: all 0.3s ease;
     }
 
     .readme {
-      background: #4682B4;
+      background: #1e3a8a;
       color: white;
-      border: 2px solid #4682B4;
+      border: 2px solid #1e3a8a;
     }
 
     .contactme {
       background: transparent;
-      color: #4682B4;
-      border: 2px solid #4682B4;
+      color: #1e3a8a;
+      border: 2px solid #1e3a8a;
     }
 
     .readme:hover,
     .contactme:hover {
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(70, 130, 180, 0.3);
+      box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
     }
 
     @keyframes fadeInDown {
@@ -391,15 +386,15 @@
 
     @media (max-width: 768px) {
       #intro h2 {
-        font-size: 2.5rem;
+        font-size: 3rem;
       }
 
       #intro h5 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
 
       #intro p {
-        font-size: 1.1rem;
+        font-size: 1.32rem;
       }
 
       .buttons a {
@@ -425,7 +420,7 @@
 
     .portfolio-category:hover {
       transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(70, 130, 180, 0.3);
+      box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
     }
 
     .portfolio-container {
@@ -447,7 +442,7 @@
       display: block;
       margin-top: 10px;
       text-decoration: none;
-      color: #4682B4;
+      color: #1e3a8a;
       font-weight: bold;
     }
 
@@ -476,7 +471,7 @@
       border: none;
       border-bottom: 3px solid transparent;
       color: #666;
-      font-size: 0.95rem;
+      font-size: 1.14rem;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -486,15 +481,15 @@
     }
 
     .tab-button:hover {
-      color: #4682B4;
-      background: rgba(70, 130, 180, 0.05);
+      color: #1e3a8a;
+      background: rgba(30, 58, 138, 0.05);
     }
 
     .tab-button.active {
-      color: #4682B4;
-      border-bottom: 3px solid #4682B4;
+      color: #1e3a8a;
+      border-bottom: 3px solid #1e3a8a;
       font-weight: 600;
-      background: rgba(70, 130, 180, 0.05);
+      background: rgba(30, 58, 138, 0.05);
     }
 
     .tab-content {
@@ -530,8 +525,28 @@
       .tab-button {
         white-space: nowrap;
         padding: 10px 15px;
-        font-size: 0.85rem;
+        font-size: 1.02rem;
       }
+    }
+
+    /* Profile Info Styles */
+    .profile-info {
+      border-top: 1px solid #e0e0e0;
+      margin-top: 10px;
+    }
+
+    .profile-info a {
+      transition: all 0.3s ease;
+    }
+
+    .profile-info a:hover {
+      color: #1e3a8a !important;
+      text-decoration: underline !important;
+    }
+
+    .profile-info i {
+      width: 20px;
+      text-align: center;
     }
   </style>
   <meta charset="UTF-8">
@@ -592,60 +607,45 @@
 
   <nav class="hide-on-small-only">
     <ul class="side-nav fixed section table-of-contents">
-
       <li class="logo">
         <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
           class="brand-logo grey-blue-text">
           <img src="/assets/img/Hossein.jpg" class="circle img-responsive profile-pic" alt="avatar">
         </a>
       </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark steelblue-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark steelblue-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-
-      <li class="bold">
-      <li class="bold">
-        <!-- mdi-av-web small
-                mdi-av-my-library-books small-->
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark steelblue-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-      <li class="bold">
-        <a href="#portfolio" class="waves-effect waves-dark steelblue-text">
-          <i class="mdi-action-work small"></i><span>Portfolio</span>
-        </a>
-      </li>
-      <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark steelblue-text"><i
-          class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark steelblue-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-
-      <li class="bold">
-
-        <a aria-label="Open Hossein's resume in a new tab"
-          href="https://hosseinfatho.github.io/Hosseinfatho.github.io/resume/Hossein_Fathollahian_Resume.pdf" target="_blank"
-          class="waves-effect waves-dark steelblue-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-      </li>
-
-      <li class="bold" style="margin-top: 20px; text-align: center; display: flex; justify-content: center; align-items: center; gap: 15px;">
-        <a href="https://github.com/hosseinfatho/" target="_blank" aria-label="GitHub" style="display: inline-block;">
-          <i class="fa fa-github" style="font-size: 24px; color: #4682B4; "></i>
-        </a>
-        <a href="https://www.linkedin.com/in/hossein-fathollahian/" target="_blank" aria-label="LinkedIn" style="display: inline-block;">
-          <i class="fa fa-linkedin" style="font-size: 24px; color: #4682B4; "></i>
-        </a>
+      
+      <li class="profile-info" style="padding: 15px; text-align: left;">
+        <h4 style="color: #1e3a8a; font-size: 2.04rem; font-weight: 600; margin-bottom: 12px; margin-top: 10px; line-height: 1.4;">
+          Hossein Fathollahian<br>
+          <span style="color: #666; font-size: 1.44rem; font-weight: bold;">Visual Analytics Computer Vision Researcher</span>
+        </h4>
+        
+        <div style="margin-bottom: 15px; text-align: left;">
+          <p style="color: #000; font-size: 1.1rem; margin-bottom: 12px; line-height: 1.4; display: flex; align-items: center; vertical-align: middle;">
+            <i class="fa fa-map-marker" style="color: #1e3a8a; margin-right: 12px; width: 30px; font-size: 1.92rem; display: flex; align-items: center; justify-content: center;"></i>
+            <span style="color: #000; display: flex; align-items: center; font-size: 1.1rem;">Chicago, IL</span>
+          </p>
+          
+          <p style="color: #000; font-size: 1.68rem; margin-bottom: 14px; line-height: 1.6; display: flex; align-items: center; vertical-align: middle;">
+            <i class="fa fa-envelope" style="color: #1e3a8a; margin-right: 12px; width: 30px; font-size: 1.92rem; display: flex; align-items: center; justify-content: center;"></i>
+            <a href="mailto:hfatho2@uic.edu" style="color: #000; text-decoration: none; display: flex; align-items: center;">Email</a>
+          </p>
+          
+          <p style="color: #000; font-size: 1.68rem; margin-bottom: 14px; line-height: 1.6; display: flex; align-items: center; vertical-align: middle;">
+            <i class="fa fa-linkedin" style="color: #1e3a8a; margin-right: 12px; width: 30px; font-size: 1.92rem; display: flex; align-items: center; justify-content: center;"></i>
+            <a href="https://www.linkedin.com/in/hossein-fathollahian/" target="_blank" style="color: #000; text-decoration: none; display: flex; align-items: center;">LinkedIn</a>
+          </p>
+          
+          <p style="color: #000; font-size: 1.68rem; margin-bottom: 14px; line-height: 1.6; display: flex; align-items: center; vertical-align: middle;">
+            <i class="fa fa-github" style="color: #1e3a8a; margin-right: 12px; width: 30px; font-size: 1.92rem; display: flex; align-items: center; justify-content: center;"></i>
+            <a href="https://github.com/hosseinfatho/" target="_blank" style="color: #000; text-decoration: none; display: flex; align-items: center;">Github</a>
+          </p>
+          
+          <p style="color: #000; font-size: 1.68rem; margin-bottom: 0; line-height: 1.6; display: flex; align-items: center; vertical-align: middle;">
+            <i class="fa fa-graduation-cap" style="color: #1e3a8a; margin-right: 12px; width: 30px; font-size: 1.92rem; display: flex; align-items: center; justify-content: center;"></i>
+            <a href="https://scholar.google.com/citations?user=JSQ0WDYAAAAJ&hl=en" target="_blank" style="color: #000; text-decoration: none; display: flex; align-items: center;">Google Scholar</a>
+          </p>
+        </div>
       </li>
     </ul>
   </nav>
@@ -699,10 +699,10 @@
 
       <li class="bold" style="margin-top: 20px; text-align: center; display: flex; justify-content: center; align-items: center; gap: 15px;">
         <a href="https://github.com/hosseinfatho/" target="_blank" aria-label="GitHub" style="display: inline-block;">
-          <i class="fa fa-github" style="font-size: 24px; color: #4682B4; "></i>
+          <i class="fa fa-github" style="font-size: 24px; color: #1e3a8a; "></i>
         </a>
         <a href="https://www.linkedin.com/in/hossein-fathollahian/" target="_blank" aria-label="LinkedIn" style="display: inline-block;">
-          <i class="fa fa-linkedin" style="font-size: 24px; color: #4682B4; "></i>
+          <i class="fa fa-linkedin" style="font-size: 24px; color: #1e3a8a; "></i>
         </a>
       </li>
     </ul>
@@ -731,36 +731,31 @@
       <div class="overlay"></div>
       <div class="container">
         <div class="col-md-9">
-          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 20px;">
+          <div class="content section-padding valign" style="margin-top: 20px;">
             <div class="caption">
-              <h2>I'm <span> Hossein Fathollahian </span></h2>
-              <div style="width: 90%; margin: 0 auto;">
-                <h5>
+              <h2 style="text-align: left; color: #1e3a8a;">I'm <span> Hossein Fathollahian </span></h2>
+              <div style="width: 100%; text-align: left;">
+                <p style="text-align: left; color: #000; font-size: 1.32rem; line-height: 1.6; margin-bottom: 20px;">
                   As a passionate PhD student at UIC, I'm deeply engaged in the fields of AI and Machine Learning,
                   Visual Analytics, and Human-Computer Interaction, where I explore innovative ways to transform complex data and interactions into meaningful,
                   impactful insights.
-                </h5>
-                <p style="text-align: justify;">
-                  At UIC, my work focuses on <strong>biomedical data visualization, medical imaging, and brain connectomics</strong>. 
+                </p>
+                <p style="text-align: left; color: #000; font-size: 1.32rem; line-height: 1.6; margin-bottom: 20px;">
+                  At UIC, my work focuses on <strong style="color: #000;">biomedical data visualization, medical imaging, and brain connectomics</strong>. 
                   I apply AI, Machine Learning, and Human-Computer Interaction to design advanced visualization and computer vision techniques 
                   that uncover complex patterns in biomedical data. By integrating intelligent algorithms with human-centered design, 
                   I aim to make biomedical insights more interpretable, actionable, and impactful for both researchers and clinicians.
                 </p>
-                
-                <div style="margin-top: 30px; padding: 20px 20px 30px 20px; background: rgba(70, 130, 180, 0.1); border-radius: 10px; border-left: 4px solid #4682B4;">
-                  <h4 style="color: #4682B4; margin-bottom: 15px; font-size: 1.3rem;">About Me</h4>
-                  <p style="text-align: justify; margin-bottom: 15px;">
-                    I'm a Ph.D. student in Computer Science at the <a href="https://www.uic.edu/" target="_blank" style="color: #0f15d2;">University of Illinois Chicago</a> (UIC) under the supervision of <a href="https://cs.uic.edu/profiles/g-marai/" target="_blank" style="color: #0f15d2;">Prof. G. Elisabeta (Liz) Marai</a>.
-                    I obtained my master's in Telecommunication Engineering at <a href="https://en.sbu.ac.ir/" target="_blank" style="color: #0f15d2;">Shahid Beheshti University of Tehran, Iran</a>.
-                    I'm currently working as a Research Assistant at the <a href="https://www.evl.uic.edu/" target="_blank" style="color: #0f15d2;">Electronic Visualization Laboratory</a> (EVL).
-                    My research interests are Visualization, Computer vision, and Image processing.
-                  </p>
-                  <p style="text-align: justify;">
-                    Looking for an opportunity to research in a challenging position combining my skills in Software Engineering, which provides professional development, interesting experiences and personal growth.
-                  </p>
-            </div>
+                <p style="text-align: left; color: #000; font-size: 1.32rem; line-height: 1.6; margin-bottom: 20px;">
+                  I'm a Ph.D. student in Computer Science at the <a href="https://www.uic.edu/" target="_blank" style="color: #1e3a8a; text-decoration: none;">University of Illinois Chicago</a> (UIC) under the supervision of <a href="https://cs.uic.edu/profiles/g-marai/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Prof. G. Elisabeta (Liz) Marai</a>.
+                  I obtained my master's in Telecommunication Engineering at <a href="https://en.sbu.ac.ir/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Shahid Beheshti University of Tehran, Iran</a>.
+                  I'm currently working as a Research Assistant at the <a href="https://www.evl.uic.edu/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Electronic Visualization Laboratory</a> (EVL).
+                  My research interests are Visualization, Computer vision, and Image processing.
+                </p>
+                <p style="text-align: left; color: #000; font-size: 1.32rem; line-height: 1.6; margin-bottom: 0;">
+                  Looking for an opportunity to research in a challenging position combining my skills in visual analytics and computer vision, which provides professional development, interesting experiences and personal growth.
+                </p>
               </div>
-
             </div>
           </div>
         </div>
@@ -771,7 +766,6 @@
     <!-- Experience Tab -->
     <div id="experience-tab" class="tab-content">
     <section id="experience" class="section">
-      <h3 class="page-title white-text steelblue" style="text-align: left;">Experience</h3>
       <div class="container">
         <div class="card">
           <h5>1- Graduate Research Assistant</h5>
@@ -826,7 +820,6 @@
     <!-- Skills Tab -->
     <div id="skills-tab" class="tab-content">
     <section id="skills" class="section">
-      <h3 class="page-title white-text steelblue" style="text-align: left;">Skills</h3>
       <div class="container">
       </div>
       <div>
@@ -960,7 +953,6 @@
     <!-- Projects Tab -->
     <div id="projects-tab" class="tab-content">
     <section id="projects" class="section">
-      <h3 class="page-title white-text steelblue" style="text-align: left;">Projects</h3>
       <div class="container">
         <div class="card project-card">
           <h5 class="project-title"> 1- Medical Image Visualization</h5>
@@ -993,7 +985,6 @@
     <!-- Portfolio Tab -->
     <div id="portfolio-tab" class="tab-content">
     <section id="portfolio" class="section">
-      <h3 class="page-title white-text steelblue" style="text-align: left;">Portfolio</h3>
       <div class="container">
         <div class="row">
           <div class="col s12 m3">
@@ -1030,7 +1021,6 @@
     <!-- Publications Tab -->
     <div id="publications-tab" class="tab-content">
     <section id="publications" class="section">
-      <h3 class="page-title white-text steelblue" style="text-align: left;">Publications</h3>
       <div class="container">
         <div class="row">
           <!-- Publication 1 -->
@@ -1060,7 +1050,6 @@
     <!-- Education Tab -->
     <div id="education-tab" class="tab-content">
     <section id="education" class="section">
-      <h3 class="page-title white-text steelblue" style="text-align: left;">Education</h3>
       <div class="container">
         <div class="row">
           <!-- Education 1 -->
@@ -1120,7 +1109,6 @@
     <!-- Contact Tab -->
     <div id="contact-tab" class="tab-content">
     <section id="contact" class="section full-height">
-      <h3 class="page-title white-text steelblue" style="text-align: left;">Contact</h3>
       <div class="container">
         <p>
           <a aria-label="Call Hossein" data-position="top" data-tooltip="Call Hossein"
