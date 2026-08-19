@@ -200,7 +200,7 @@ nav i {
 } */
 
 main {
-  background: url(../../assets/img/bg.png) repeat;
+  background: #fff;
   padding-left: 219px;
 }
 
@@ -389,6 +389,7 @@ h3 {
   margin-right: 0;
   color: #333;
   border-bottom: 2px solid #ffab40;
+  text-transform: none !important;
 }
 
 .card li a:hover {

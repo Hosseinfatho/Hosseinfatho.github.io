@@ -6,35 +6,31 @@
     
     /* Experience section */
     #experience {
-      padding: 20px 0;
-      background: linear-gradient(135deg, #f4f4f4 0%, #e0e0e0 100%);
+      padding: 0;
+      background: #fff;
     }
 
 
     #experience .container {
       width: 100%;
-      /* Make the container full width */
-      max-width: 1200px;
-      /* Optional: Set a max width */
-      margin: 0 auto;
-      /* Center the container */
-      padding: 0 15px;
-      /* Add some padding on the sides */
+      max-width: none;
+      margin: 0;
+      padding: 0;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      margin-bottom: 15px;
-      padding: 15px;
-      transition: all 0.4s ease;
+      background: #fff;
+      border-radius: 0;
+      box-shadow: none;
+      margin-bottom: 0;
+      padding: 0;
+      transition: none;
       border: none;
     }
 
     .card:hover {
-      transform: translateY(-8px) scale(1.01);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      transform: none;
+      box-shadow: none;
     }
 
     .card h5 {
@@ -119,7 +115,7 @@
 
     .card:hover .duration {
       background: rgba(30, 58, 138, 0.2);
-      transform: scale(1.05);
+      transform: none;
     }
 
     /* Skills section improvements */
@@ -184,30 +180,13 @@
     }
 
     .card {
-      animation: fadeInUp 0.6s ease forwards;
-      opacity: 0;
-    }
-
-    .card:nth-child(1) {
-      animation-delay: 0.2s;
-    }
-
-    .card:nth-child(2) {
-      animation-delay: 0.4s;
-    }
-
-    .card:nth-child(3) {
-      animation-delay: 0.6s;
-    }
-
-    .card:nth-child(4) {
-      animation-delay: 0.8s;
+      animation: none;
+      opacity: 1;
     }
 
     @media (max-width: 768px) {
       .card {
-        padding: 15px;
-        /* Less padding for smaller screens */
+        padding: 0;
       }
 
       .card h5 {
@@ -230,7 +209,7 @@
     #intro {
       position: relative;
       background: white;
-      overflow: hidden;
+      overflow: visible;
     }
 
     #intro::before {
@@ -461,12 +440,87 @@
       font-weight: bold;
     }
 
+    /* Full-width white sheets for every tab */
+    main {
+      background: #fff;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .tab-content {
+      display: none;
+      width: 100%;
+      box-sizing: border-box;
+      background: #fff;
+      min-height: calc(100vh - 72px);
+      padding: clamp(16px, 3vw, 40px) clamp(16px, 4vw, 48px);
+      animation: fadeIn 0.5s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-content .section {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+
+    .tab-content .container,
+    .tab-content #intro.section .container,
+    .tab-content #experience .container {
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      left: auto !important;
+      top: auto !important;
+      position: relative !important;
+    }
+
+    .tab-content .col-md-9,
+    .tab-content .content,
+    .tab-content .caption {
+      width: 100%;
+      max-width: none;
+      float: none;
+    }
+
+    .tab-content .card,
+    .tab-content .card-content {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      border-radius: 0;
+      box-shadow: none;
+      opacity: 1;
+    }
+
+    #intro.section,
+    #intro.section.full-height {
+      height: auto;
+      min-height: 0;
+      overflow: visible;
+      background: #fff;
+    }
+
+    #intro .overlay {
+      display: none;
+    }
+
     /* Tab System Styles */
     .tabs-container {
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: 0;
+      margin-bottom: 0;
+      width: 100%;
+      box-sizing: border-box;
       background: white;
-      padding: 10px 0;
+      padding: 10px clamp(16px, 4vw, 48px) 0;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
@@ -475,7 +529,7 @@
       flex-wrap: wrap;
       gap: 5px;
       margin-bottom: 0;
-      padding: 0 15px;
+      padding: 0;
       border-bottom: 2px solid #e0e0e0;
       justify-content: flex-start;
     }
@@ -505,17 +559,6 @@
       border-bottom: 3px solid #1e3a8a;
       font-weight: 600;
       background: rgba(30, 58, 138, 0.05);
-    }
-
-    .tab-content {
-      display: none;
-      padding: 20px 0;
-      min-height: 400px;
-      animation: fadeIn 0.5s ease;
-    }
-
-    .tab-content.active {
-      display: block;
     }
 
     @keyframes fadeIn {
@@ -611,6 +654,65 @@
   <meta name="robots" content="index, follow" />
   <!-- Google Site Verification for indexing -->
   <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
+
+  <style>
+    html, body, main {
+      background: #fff !important;
+    }
+
+    main .tabs-container,
+    main .tab-content {
+      width: 100% !important;
+      max-width: none !important;
+      box-sizing: border-box;
+    }
+
+    main .tab-content {
+      background: #fff !important;
+      padding: clamp(16px, 3vw, 40px) clamp(16px, 4vw, 48px) !important;
+    }
+
+    main .tab-content .container,
+    main .tab-content .section,
+    main .tab-content .card,
+    main .tab-content .card-content,
+    main #intro .container,
+    main #intro.section .container,
+    main #experience .container {
+      width: 100% !important;
+      max-width: none !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      left: auto !important;
+      top: auto !important;
+      position: relative !important;
+      float: none !important;
+    }
+
+    main .tab-content .card {
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      background: #fff !important;
+      transform: none !important;
+      animation: none !important;
+      opacity: 1 !important;
+    }
+
+    main .tab-content .card:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    main .tab-content a,
+    main .tab-content .card a,
+    main .tab-content .card li a,
+    main .card .card-action a {
+      text-transform: none !important;
+      font-variant: normal !important;
+    }
+  </style>
 
 </head>
 
@@ -745,11 +847,10 @@
     <!-- Tab Contents -->
     <!-- Intro Tab -->
     <div id="intro-tab" class="tab-content active">
-    <section id="intro" class="section full-height" style="margin-bottom: 0;">
-      <div class="overlay"></div>
+    <section id="intro" class="section" style="margin-bottom: 0;">
       <div class="container">
-        <div class="col-md-9">
-          <div class="content section-padding valign" style="margin-top: 20px;">
+        <div>
+          <div class="content" style="margin-top: 0;">
             <div class="caption">
               <h2 style="text-align: left; color: #1e3a8a;">I'm <span> Hossein Fathollahian </span></h2>
               <div style="width: 100%; text-align: left;">
@@ -791,12 +892,12 @@
             <p style="text-align: left; color: #000; font-size: 1.32rem; line-height: 1.6; margin-bottom: 10px;">Electronic Visualization Laboratory (EVL) And Department Of Communication, UIC</p>
             <ul style="text-align: left;">
               <li style="text-align: left; color: #000;"><strong>ConGAT:</strong> 3D Region Of Interest Discovery In Multiplexed Microscopy Images. (<a href="https://cs.uic.edu/profiles/boorboor-saeed/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Dr. Saeed Boorboor</a>, <a href="https://cs.uic.edu/profiles/g-marai/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Prof. G. Elisabeta Marai</a>)</li>
-              <li style="text-align: left; color: #000;"><strong>BioSet:</strong> Interactive Visual Analysis Of Biomarker Co-Localization. (<a href="https://cs.uic.edu/profiles/g-marai/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Prof. G. Elisabeta Marai</a>, <a href="https://cs.uic.edu/profiles/boorboor-saeed/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Dr. Saeed Boorboor</a>, <a href="https://engineering.nyu.edu/faculty/robert-krueger" target="_blank" style="color: #1e3a8a; text-decoration: none;">Prof. Robert Krueger</a>)</li>
+              <li style="text-align: left; color: #000;"><strong>BioSet:</strong> Interactive Visual Analysis Of Biomarker Co-Localization. (<a href="https://cs.uic.edu/profiles/g-marai/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Prof. G. Elisabeta Marai</a>, <a href="https://cs.uic.edu/profiles/boorboor-saeed/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Dr. Saeed Boorboor</a>, <a href="https://engineering.nyu.edu/faculty/robert-krueger" target="_blank" style="color: #1e3a8a; text-decoration: none;">Dr. Robert Krueger</a>)</li>
               <li style="text-align: left; color: #000;"><strong>Loom:</strong> Multi-Region Analysis Of Spatial Transcriptomics. (<a href="https://cs.uic.edu/profiles/g-marai/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Prof. G. Elisabeta Marai</a>)</li>
               <li style="text-align: left; color: #000;"><strong>SAGE:</strong> Edge Computing For Wildfire Detection, Healthcare, And Discovery. (<a href="https://cs.uic.edu/profiles/papka-michael/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Prof. Michael E. Papka</a>, Summer 2025)</li>
               <li style="text-align: left; color: #000;"><strong>Connectomics:</strong> Mapping Neural Circuits And Brain Connectivity. (<a href="https://cs.uic.edu/profiles/papka-michael/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Prof. Michael E. Papka</a>, <a href="https://phys.uic.edu/profiles/boergens-kevin/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Dr. Kevin Boergens</a>, Summer 2025)</li>
               <li style="text-align: left; color: #000;"><strong>BI-LAVA:</strong> Biocuration With Hierarchical Image Labeling. (<a href="https://cs.uic.edu/profiles/g-marai/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Prof. G. Elisabeta Marai</a>)</li>
-              <li style="text-align: left; color: #000;"><strong>AI And Visual Analytics For Digital Communication:</strong> Applying AI To Humanity And Social Media Visual Analytics. (<a href="https://comm.uic.edu/profiles/zizi-papacharissi/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Prof. Zizi Papacharissi</a>, <a href="https://comm.uic.edu/profiles/taylor-samuel/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Prof. Samuel Hardman Taylor</a>)</li>
+              <li style="text-align: left; color: #000;"><strong>AI And Visualization For Digital Communication:</strong> AI, Machine Learning, And Visualization For Social Media, Personal Relationships, And Mental Health. (<a href="https://comm.uic.edu/profiles/zizi-papacharissi/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Prof. Zizi Papacharissi</a>, <a href="https://comm.uic.edu/profiles/taylor-samuel/" target="_blank" style="color: #1e3a8a; text-decoration: none;">Dr. Samuel Hardman Taylor</a>)</li>
             </ul>
             <div class="duration" style="text-align: left;">Jan 2024 - Present | Chicago, IL</div>
           </div>
@@ -1171,42 +1272,44 @@
         <div class="card" style="text-align: left;">
           <div class="card-content">
             <div style="text-align: right; margin-bottom: 20px; padding: 10px; color: #666; font-size: 1.32rem;">
-              <strong>J:</strong> journal, <strong>C:</strong> conference/symposium, <strong>W:</strong> workshop, <strong>UR:</strong> Under Review
+              <strong>J:</strong> journal, <strong>C:</strong> conference/symposium, <strong>W:</strong> workshop
             </div>
             
             <p style="text-align: left; color: #000; font-size: 1.32rem; line-height: 1.6; margin-bottom: 20px;">
-              <strong style="color: #1e3a8a;">1.</strong> [J]  Farah Torkamani‑Azar, Hassan Imani, Hossein Fathollahian. "Video Quality Measurement Based on 3‑D Singular
-              Value Decomposition." Journal of Visual Communication and Image Representation, Volume 27, February 2015,
-              Pages 1–6. <a href="https://www.sciencedirect.com/science/article/abs/pii/S1047320314002016" target="_blank" style="color: #1e3a8a; text-decoration: none;">doi:10.1016/j.jvcir.2014.12.004</a>.
+              <strong style="color: #1e3a8a;">1.</strong> [J]  Hossein Fathollahian, Siyuan Zhao, Nafiul Nipu, Marziye Salahshour, Lei Duan, Wei Tang, Saeed Boorboor, and G. Elisabeta Marai. "ConGAT:
+              Context‑Aware Graph Attention Network for 3D Region of Interest Discovery in Multiplexed Microscopy Images."
+              Computers &amp; Graphics, 2026, 104728.
+              <a href="https://doi.org/10.1016/j.cag.2026.104728" target="_blank" style="color: #1e3a8a; text-decoration: none;">doi:10.1016/j.cag.2026.104728</a>
             </p>
             
             <p style="text-align: left; color: #000; font-size: 1.32rem; line-height: 1.6; margin-bottom: 20px;">
-              <strong style="color: #1e3a8a;">2.</strong> [J]  Tayebi, Safiyeh, Ayse Sert Oti, Hossein Fathollahian, and Ubydul Haque. " Mapping War Trauma: A Machine Learning
+              <strong style="color: #1e3a8a;">2.</strong> [J] Siyuan Zhao, Nafiul Nipu, Hossein Fathollahian, Olga Karginova, Hao Chen, Ameen Salahudeen, and G. Elisabeta
+              Marai. "Loom: Multi‑Region Analysis of Spatial Transcriptomics with Local Neighborhoods and Global Trajectories."
+              IEEE Transactions on Visualization and Computer Graphics, 2026.
+              <a href="https://arxiv.org/abs/2607.22505" target="_blank" style="color: #1e3a8a; text-decoration: none;">arXiv:2607.22505</a>
+            </p>
+            
+            <p style="text-align: left; color: #000; font-size: 1.32rem; line-height: 1.6; margin-bottom: 20px;">
+              <strong style="color: #1e3a8a;">3.</strong> [J]  Tayebi, Safiyeh, Ayse Sert Oti, Hossein Fathollahian, and Ubydul Haque. " Mapping War Trauma: A Machine Learning
               Approach to Predict Mental Health Impacts in Ukraine." SSM–Population Health, 2025:101879.
               <a href="https://pubmed.ncbi.nlm.nih.gov/41328271/" target="_blank" style="color: #1e3a8a; text-decoration: none;">doi:10.1016/j.ssmph.2025.101879</a>
             </p>
             
             <p style="text-align: left; color: #000; font-size: 1.32rem; line-height: 1.6; margin-bottom: 20px;">
-              <strong style="color: #1e3a8a;">3.</strong> [C]  Hossein Fathollahian, Siyuan Zhao, Nafiul Nipu, and G. Elisabeta Marai. "Attention‑Based ROI Discovery in 3D
-              Tissue Images." <a href="http://biovis.net/2025/program_ieee/" target="_blank" style="color: #1e3a8a; text-decoration: none;">IEEE Transactions on Visualization and Computer Graphics, Bio+MedVis Challenge, Nov 2025,
+              <strong style="color: #1e3a8a;">4.</strong> [C]  Hossein Fathollahian, Siyuan Zhao, Nafiul Nipu, and G. Elisabeta Marai. "Attention‑Based ROI Discovery in 3D
+              Tissue Images." <a href="http://biovis.net/2025/program_ieee/" target="_blank" style="color: #1e3a8a; text-decoration: none;">IEEE Bio+MedVis Challenge, Vienna, Austria, Nov 2025,
               pages 2‑4</a>
             </p>
             
             <p style="text-align: left; color: #000; font-size: 1.32rem; line-height: 1.6; margin-bottom: 20px;">
-              <strong style="color: #1e3a8a;">4.</strong> [C]  Hossein Fathollahian, Marziye Salahshour. " From Peaks to Patterns."
-              <a href="http://biovis.net/2025/program_ieee/" target="_blank" style="color: #1e3a8a; text-decoration: none;">IEEE Transactions on Visualization and Computer Graphics, Bio+MedVis Challenge, Nov 2025, pages 22‑24</a>
-            </p>
-            
-            <p style="text-align: left; color: #000; font-size: 1.32rem; line-height: 1.6; margin-bottom: 20px;">
-              <strong style="color: #1e3a8a;">5.</strong> [UR] Siyuan Zhao, Nafiul Nipu, Hossein Fathollahian, Ameen Salahudeen, Hao Chen, Olga Karginova, and G. Elisabeta
-              Marai. "Loom: Multi‑Region Analysis of Spatial Transcriptomics with Local Neighborhoods and Global Trajectories." (
-              EuroVis 2026, under review)
+              <strong style="color: #1e3a8a;">5.</strong> [C]  Hossein Fathollahian, Marziye Salahshour. " From Peaks to Patterns."
+              <a href="http://biovis.net/2025/program_ieee/" target="_blank" style="color: #1e3a8a; text-decoration: none;">IEEE Bio+MedVis Challenge, Vienna, Austria, Nov 2025, pages 22‑24</a>
             </p>
             
             <p style="text-align: left; color: #000; font-size: 1.32rem; line-height: 1.6; margin-bottom: 0;">
-              <strong style="color: #1e3a8a;">6.</strong> [UR]  Hossein Fathollahian, Siyuan Zhao, Nafiul Nipu, Wei Tang, Saeed BoorBoor, and G. Elisabeta Marai. "ConGAT:
-              A Context‑Aware Graph Attention Network for Region‑of‑Interest Discovery in Multichannel Microscopy Environments."
-              (ICHI 2026, under review)
+              <strong style="color: #1e3a8a;">6.</strong> [J]  Farah Torkamani‑Azar, Hassan Imani, Hossein Fathollahian. "Video Quality Measurement Based on 3‑D Singular
+              Value Decomposition." Journal of Visual Communication and Image Representation, Volume 27, February 2015,
+              Pages 1–6. <a href="https://www.sciencedirect.com/science/article/abs/pii/S1047320314002016" target="_blank" style="color: #1e3a8a; text-decoration: none;">doi:10.1016/j.jvcir.2014.12.004</a>.
             </p>
           </div>
         </div>
