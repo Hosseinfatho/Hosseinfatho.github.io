@@ -745,65 +745,59 @@
 
     #skills .skills-panel {
       padding: clamp(20px, 4vw, 40px) !important;
+      box-sizing: border-box;
     }
 
     #skills .skills-heading {
-      margin: 0 0 8px;
+      margin: 0 0 20px;
       color: #1e3a8a;
       font-size: clamp(1.6rem, 3vw, 2rem);
       font-weight: 600;
       line-height: 1.25;
     }
 
-    #skills .skills-intro {
-      margin: 0 0 28px;
-      color: #647084;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
     #skills .skill-group {
       display: grid;
-      grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.6fr);
-      gap: 28px;
-      align-items: center;
-      padding: 24px 0;
+      grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.8fr);
+      gap: 24px;
+      align-items: start;
+      padding: 20px 0;
       border-top: 1px solid #e5e7eb;
     }
 
     #skills .skill-group-label {
-      margin: 0 0 6px;
+      margin: 2px 0 0;
       color: #1e3a8a;
-      font-size: 1.2rem;
+      font-size: 1.08rem;
       font-weight: 600;
       line-height: 1.4;
-    }
-
-    #skills .skill-group-description {
-      margin: 0;
-      color: #647084;
-      font-size: 0.95rem;
-      line-height: 1.55;
     }
 
     #skills .skill-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
     #skills .skill-list li {
-      margin: 0;
-      padding: 8px 13px;
-      border: 1px solid #dfe5ef;
-      border-radius: 4px;
+      position: static;
+      margin: 0 !important;
+      padding: 7px 11px !important;
+      border: 1px solid #e4e9f1;
+      border-radius: 3px;
       background: #f8f9fb;
       color: #273244;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       line-height: 1.35;
+    }
+
+    #skills .skill-list li::before,
+    #skills .skill-list li:hover::before {
+      content: none !important;
+      display: none !important;
     }
 
     #skills .supporting-skills {
@@ -906,22 +900,18 @@
         padding: 20px 16px !important;
       }
 
-      #skills .skills-intro {
-        margin-bottom: 20px;
-      }
-
       #skills .skill-group {
         grid-template-columns: minmax(0, 1fr);
-        gap: 14px;
-        padding: 20px 0;
+        gap: 10px;
+        padding: 16px 0;
       }
 
       #skills .skill-list {
-        gap: 8px;
+        gap: 7px;
       }
 
       #skills .skill-list li {
-        padding: 7px 10px;
+        padding: 6px 9px !important;
         font-size: 0.9rem;
       }
 
@@ -1178,14 +1168,10 @@
       <div class="container">
         <div class="card" style="text-align: left;">
           <div class="card-content skills-panel">
-            <h2 class="skills-heading">Skills &amp; areas of focus</h2>
-            <p class="skills-intro">A practical toolkit for building software, applying machine learning, and making complex visual data easier to understand.</p>
+            <h2 class="skills-heading">Skills</h2>
 
             <div class="skill-group">
-              <div>
-                <h3 class="skill-group-label">Programming languages</h3>
-                <p class="skill-group-description">The languages I use to build applications and analysis tools.</p>
-              </div>
+              <h3 class="skill-group-label">Programming languages</h3>
               <ul class="skill-list" aria-label="Programming languages">
                 <li>Python</li>
                 <li>JavaScript</li>
@@ -1197,10 +1183,7 @@
             </div>
 
             <div class="skill-group">
-              <div>
-                <h3 class="skill-group-label">AI &amp; machine learning</h3>
-                <p class="skill-group-description">Machine learning, deep learning, and the tools behind data-driven models.</p>
-              </div>
+              <h3 class="skill-group-label">AI &amp; machine learning</h3>
               <ul class="skill-list" aria-label="Artificial intelligence and machine learning">
                 <li>Machine learning</li>
                 <li>Deep learning</li>
@@ -1214,10 +1197,7 @@
             </div>
 
             <div class="skill-group">
-              <div>
-                <h3 class="skill-group-label">Visualization, analytics &amp; computer vision</h3>
-                <p class="skill-group-description">Turning complex image and data into clear visual experiences and useful insights.</p>
-              </div>
+              <h3 class="skill-group-label">Visualization, analytics &amp; computer vision</h3>
               <ul class="skill-list" aria-label="Visualization, visual analytics, and computer vision">
                 <li>Visual analytics</li>
                 <li>Data visualization</li>
