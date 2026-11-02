@@ -126,6 +126,117 @@
           grid-template-columns: 1fr; /* Stack subsections on smaller screens */
         }
       }
+
+      body {
+        background: #f7f8fa;
+        color: #273244;
+      }
+
+      .page-title {
+        margin: 24px auto;
+        color: #1e3a8a;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-weight: 600;
+      }
+
+      section {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto 24px;
+        padding: clamp(18px, 3vw, 32px);
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        background: #fff;
+        box-sizing: border-box;
+      }
+
+      section h4 {
+        margin-top: 0;
+        color: #1e3a8a;
+        font-size: 1.35rem;
+        font-weight: 600;
+      }
+
+      .main-container {
+        display: grid;
+        grid-template-columns: minmax(180px, 0.8fr) minmax(0, 2fr);
+        align-items: start;
+        gap: 20px;
+        margin: 0;
+      }
+
+      .main-section {
+        min-width: 0;
+        padding: 16px;
+        border: 1px solid #edf0f4;
+        border-radius: 6px;
+        background: #fafbfc;
+      }
+
+      .main-section img {
+        width: min(100%, 180px);
+        max-height: 150px;
+        object-fit: contain;
+      }
+
+      .subsections {
+        min-width: 0;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+        gap: 16px;
+      }
+
+      .portfolio-item {
+        display: block;
+        min-width: 0;
+        padding: 14px;
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        background: #fff;
+      }
+
+      .portfolio-item p {
+        margin: 0 0 12px;
+        color: #273244;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .video-container video {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+      }
+
+      .github-link-container {
+        margin-top: 10px;
+      }
+
+      @media screen and (max-width: 700px) {
+        .page-title {
+          margin: 18px auto;
+        }
+
+        section {
+          width: calc(100% - 24px);
+          margin-bottom: 16px;
+          padding: 18px 14px;
+        }
+
+        .main-container {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 14px;
+        }
+
+        .main-section {
+          padding: 12px;
+        }
+
+        .subsections {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
     </style>
   </head>
   <body>
